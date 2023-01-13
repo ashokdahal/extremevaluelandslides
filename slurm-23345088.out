@@ -1,0 +1,65 @@
+Loading module for Machine Learning 2021.10
+Machine Learning 2021.10 is now loaded
+gpu504-37 pinned to port 8890
+ 
+To connect to the compute node gpu504-37 on IBEX running your jupyter notebook server, you need to run following two commands in a terminal 1. 
+Command to create ssh tunnel from you workstation/laptop to glogin: 
+
+ssh -L 8890:gpu504-37:8890 dahala@glogin.ibex.kaust.edu.sa 
+
+Copy the link provided below by jupyter-server and replace the NODENAME with localhost before pasting it in your browser on your workstation/laptop 
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyter_lsp/types.py:193: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  nodejs = Unicode(help=_("path to nodejs executable")).tag(config=True)
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyter_lsp/types.py:195: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  node_roots = List_([], help=_("absolute paths in which to seek node_modules")).tag(
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyter_lsp/types.py:200: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  [], help=_("additional absolute paths to seek node_modules first")
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyter_lsp/manager.py:41: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  help=_("extra language server specs, keyed by implementation, from conf.d"),
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyter_lsp/manager.py:46: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  help=_("a dict of language server specs, keyed by implementation"),
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyter_lsp/manager.py:52: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  True, help=_("try to find known language servers in sys.prefix (and elsewhere)")
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyter_lsp/manager.py:279: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  _("Skipped non-installed server(s): {}").format(
+[I 16:56:29.247 NotebookApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-lsp-server, r-languageserver, sql-language-server, texlab, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[W 2023-01-13 16:56:29.986 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-01-13 16:56:29.987 LabApp] 'port_retries' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-01-13 16:56:29.987 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-01-13 16:56:29.987 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-01-13 16:56:29.987 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2023-01-13 16:56:29.994 LabApp] JupyterLab extension loaded from /sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyterlab
+[I 2023-01-13 16:56:29.994 LabApp] JupyterLab application directory is /sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/share/jupyter/lab
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/site-packages/jupyter_server_mathjax/app.py:40: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  help=_("""The MathJax.js configuration file that is to be used."""),
+[I 16:56:30.177 NotebookApp] Serving notebooks from local directory: /home/dahala/extremevaluelandslides
+[I 16:56:30.177 NotebookApp] Jupyter Notebook 6.4.4 is running at:
+[I 16:56:30.177 NotebookApp] http://gpu504-37:8890/?token=8efe003b69006e82bc1f8a861f8262347927cb39dfca0568
+[I 16:56:30.177 NotebookApp]  or http://127.0.0.1:8890/?token=8efe003b69006e82bc1f8a861f8262347927cb39dfca0568
+[I 16:56:30.177 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 16:56:30.184 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/dahala/.local/share/jupyter/runtime/nbserver-33748-open.html
+    Or copy and paste one of these URLs:
+        http://gpu504-37:8890/?token=8efe003b69006e82bc1f8a861f8262347927cb39dfca0568
+     or http://127.0.0.1:8890/?token=8efe003b69006e82bc1f8a861f8262347927cb39dfca0568
+[W 16:56:44.903 NotebookApp] Forbidden
+[W 16:56:44.932 NotebookApp] 403 GET /api/kernelspecs?1673618204892 (10.109.66.157) 31.850000ms referer=None
+[W 16:57:03.167 NotebookApp] Forbidden
+[W 16:57:03.168 NotebookApp] 403 GET /api/kernels?1673618223161 (10.109.66.157) 2.220000ms referer=None
+[W 16:57:45.359 NotebookApp] Forbidden
+[W 16:57:45.360 NotebookApp] 403 GET /api/sessions?1673618265355 (10.109.66.157) 2.150000ms referer=None
+[W 16:59:29.029 NotebookApp] Forbidden
+[W 16:59:29.030 NotebookApp] 403 GET /api/sessions?1673618369024 (10.109.66.157) 2.220000ms referer=None
+[I 17:00:20.385 NotebookApp] Creating new notebook in 
+/sw/csgv/machine_learning/2021.10/el7_cudnn8.2_cuda11.0_py3.8_env/machine_learning-module/env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 17:00:20.525 NotebookApp] Kernel started: 4d071682-e8d0-4dba-9ce9-285796eaad1d, name: python3
+[W 17:00:20.558 NotebookApp] delete /testrun-jvsc-58bc9eb7-a9db-4917-9e64-768f9ce96050ac0338c2-e3e9-47e0-861a-670e348b7f88.ipynb
+[I 17:04:40.288 NotebookApp] Kernel restarted: 4d071682-e8d0-4dba-9ce9-285796eaad1d
+[I 17:04:40.294 NotebookApp] Starting buffering for 4d071682-e8d0-4dba-9ce9-285796eaad1d:0f5fa86b-1e3c-40c6-b004-63d5dd314bfc
+[I 17:04:40.304 NotebookApp] Restoring connection for 4d071682-e8d0-4dba-9ce9-285796eaad1d:0f5fa86b-1e3c-40c6-b004-63d5dd314bfc
+[I 17:11:48.253 NotebookApp] Kernel restarted: 4d071682-e8d0-4dba-9ce9-285796eaad1d
+[I 17:11:48.259 NotebookApp] Starting buffering for 4d071682-e8d0-4dba-9ce9-285796eaad1d:0f5fa86b-1e3c-40c6-b004-63d5dd314bfc
+[I 17:11:48.270 NotebookApp] Restoring connection for 4d071682-e8d0-4dba-9ce9-285796eaad1d:0f5fa86b-1e3c-40c6-b004-63d5dd314bfc
