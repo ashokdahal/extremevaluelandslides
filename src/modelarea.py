@@ -8,44 +8,54 @@ import numpy as np
 from scipy.stats import genpareto
 #import tensorflow_probability.distributions as tfp
 tfd = tfp.distributions
-class GPDLayer(tf.keras.layers.Layer):
-    def __init__(self, lo_init,sh_init,sc_init,num_outputs=1):
-        super(GPDLayer, self).__init__()
-        self.units = num_outputs
-        self.lo_init,self.sh_init,self.sc_init=lo_init,sh_init,sc_init
-    def build(self, input_shape):
-        lo_init =tf.keras.initializers.Constant(value=0.0)
-        #tf.keras.initializers.RandomUniform(minval=0.2)
-        self.location = tf.Variable(name='location',
-            initial_value=lo_init(shape=(self.units,),
-                                dtype='float32'),
-            trainable=False)
 
+class lhmodel():
+    def __init__(self,modelparams):
+        self.depth=64
+        self.alpha=0.0
+        self.beta=1.0
+        self.N_STEPS=200
+        self.infeatures=
+        self.outfeatures=
+        self.units=
+        self.kernel_initializer='he_normal'
+        self.bias_initializer='he_uniform'
+        self.droupout=
+        self.batchnormalization=
+        self.dropoutratio=
+        self.lastactivation=
+        self.middleactivation=
 
-        sh_init = tf.keras.initializers.Constant(value=self.sh_init) #tf.keras.initializers.RandomUniform(minval=0.5)
-        self.shape = tf.Variable(name='shape',
-            initial_value=sh_init(shape=(self.units,), dtype='float32'),
-            trainable=True)
+        self.lr=
+        self.decay_steps=
+        self.decay_rate=
+        self.opt=tf.keras.optimizers.Adam
 
+    def getAreaDensityModel(self):
 
-        sc_init = tf.keras.initializers.Constant(value=self.sc_init)  # tf.keras.initializers.RandomUniform(minval=0.3)
-        self.scale = tf.Variable(name='sclae',
-            initial_value=sc_init(shape=(self.units,), dtype='float32'),
-            trainable=True)
+        features_only=Input((self.infeatures))
 
+        x=layers.Dense(units=self.units,name=f'AR_DN_0',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(features_only)
+        for i in range(1,self.depth+1):
+            x=layers.Dense(activation=self.middleactivation,units=self.units,name=f'AR_DN_{str(i)}',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(x)
+            if self.batchnormalization:
+                x= layers.BatchNormalization()(x)
+            if self.droupout:
+                x= layers.Dropout(self.dropoutratio)(x)      
+        out_areaDen=layers.Dense(units=self.outfeatures,activation='relu',name='areaDen')(x)
+        self.model = Model(inputs=features_only, outputs=out_areaDen)
 
-    def call(self, inputs):
-        # z=tf.math.divide(tf.math.subtract(inputs,self.location),self.scale)
-        # power_part=-tf.math.add(1.0,tf.math.divide(1.0,self.shape))
-        # sum_part=tf.math.add(1.0,tf.math.multiply(self.shape,z))
-        # mul_part=tf.math.divide(1.0,self.scale)
-        # return z,power_part,sum_part,mul_part,tf.math.multiply(mul_part,tf.math.pow(sum_part,power_part)),tf.math.pow(sum_part,power_part)
-        dist=tfd.GeneralizedPareto(loc=tf.constant(0),scale=self.scale,concentration=self.shape)
-        return tf.reduce_mean(dist.log_prob(inputs))
+    def getOptimizer(self,):
+        lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(initial_learning_rate=self.lr,decay_steps=self.decay_steps,decay_rate=self.decay_rate,staircase=True)
+        self.optimizer = opt(learning_rate=1e-3)
+    
+    def gevloss(self,ytrue,ypred):
+    
+    def gevmetric(self,ytrue,ypred)
 
-
-
-
+    def compileModel(self,weights=None):
+        self.model.compile(optimizer=self.optimizer, loss=self.gevloss, metrics=gevmetric)
+    
 
 class ADModel():
     def __init__(self,loc,scale,shape):
@@ -55,7 +65,6 @@ class ADModel():
         self.scale=tf.constant(scale)
         self.concentration=tf.constant(shape)
         self.depth=64
-        self.dist=tfp.distributions.GeneralizedPareto(self.loc, self.scale, self.concentration, validate_args=False, allow_nan_stats=True, name=None)
         self.alpha=0.0
         self.beta=1.0
         self.N_STEPS=200
@@ -129,6 +138,8 @@ class ADModel():
         where_nonzero = tf.where(
             tf.equal(y, 0), y, y * tf.math.log1p(nonzero_conc * z))
         return -tf.math.log(scale) - tf.where(eq_zero, z, where_nonzero)
+
+        
     def distributionLoss(self,ytrue,ypred):
         #loc=ypred[:,0]
         scale=ypred[:,0]

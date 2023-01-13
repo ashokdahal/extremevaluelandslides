@@ -3,7 +3,7 @@
 #SBATCH --cpus-per-task=4 
 #SBATCH --gres=gpu:1 
 #SBATCH --mem=32GB 
-#SBATCH --time=01:00:00 
+#SBATCH --time=010:00:00 
 #SBATCH --partition=batch 
 
 # Load environment which has Jupyter installed. It can be one of the following:

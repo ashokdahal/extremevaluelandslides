@@ -31,7 +31,7 @@ class readGPDData():
         monsoon_year=year
         inventory_subset=self.df_inventory[self.df_inventory['Monsoon_Ye']==str(monsoon_year)]
         if inventory_subset.empty:
-            raise(f"ValueError: no landslide present for the year {year}")
+            return None
         sjoined=gpd.overlay(inventory_subset, df_slopeunit_sub, how='intersection')
         sjoined['area_new']=sjoined.area
         sjoined=sjoined.groupby(['cat'])['area_new'].agg(['sum'])
@@ -69,7 +69,7 @@ class readGPDData():
             else:
                 clean_covar=clean_covar.append(alldata)
         Xtrain=clean_covar[self.dataparam['variables']].to_numpy()
-        Ytrain=clean_covar[self.dataparam['area_density']].to_numpy()
+        Ytrain=clean_covar['area_density'].to_numpy()
         self.X_train, self.X_test, self.Y_train, self.Y_test = train_test_split(Xtrain,Ytrain, test_size=self.dataparam['testsize'], random_state=420)
         self.covars=None
         self.df_inventory=None
