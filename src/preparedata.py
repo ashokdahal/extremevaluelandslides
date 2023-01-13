@@ -67,7 +67,7 @@ class readGPDData():
             if i==0:
                 clean_covar=alldata
             else:
-                clean_covar=clean_covar.append(alldata)
+                clean_covar=pd.concat([clean_covar,alldata])
         Xtrain=clean_covar[self.dataparam['variables']].to_numpy()
         Ytrain=clean_covar['area_density'].to_numpy()
         self.X_train, self.X_test, self.Y_train, self.Y_test = train_test_split(Xtrain,Ytrain, test_size=self.dataparam['testsize'], random_state=420)

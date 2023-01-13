@@ -43,7 +43,7 @@ class lhmodel():
 
     def getOptimizer(self,):
         lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(initial_learning_rate=self.lr,decay_steps=self.decay_steps,decay_rate=self.decay_rate,staircase=True)
-        self.optimizer = opt(learning_rate=1e-3)
+        self.optimizer = self.opt(learning_rate=1e-3)
     
     def gevloss(self,ytrue,ypred):
         scale=ypred[:,0]
@@ -52,12 +52,16 @@ class lhmodel():
         negloglik=-dist.log_prob(ytrue)
         return tf.reduce_sum(negloglik)
     def gevmetric(self,ytrue,ypred):
+        scale=ypred[:,0]
+        conc=ypred[:,1]
         dist=tfp.distributions.GeneralizedExtremeValue(loc=0.0,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=True,name='GeneralizedExtremeValue')
         lik=dist.prob(ytrue)
         return tf.reduce_mean(lik)
 
-    def compileModel(self,weights=None):
-        self.model.compile(optimizer=self.optimizer, loss=self.gevloss, metrics=gevmetric)
+    def preparemodel(self,weights=None):
+        self.getAreaDensityModel()
+        self.getOptimizer()
+        self.model.compile(optimizer=self.optimizer, loss=self.gevloss, metrics=self.gevmetric)
     
 '''
 #old version of code only used for reference. 
