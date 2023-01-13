@@ -41,5 +41,20 @@
       "startyear":1988,
       "testsize":0.3
     },
-    "modelparam":{}
+    "modelparam":{
+      "depth":64,
+      "infeatures":29,
+      "outfeatures":2,
+      "units":128,
+      "kernel_initializer":"he_normal",
+      "bias_initializer":"he_uniform",
+      "droupout":true,
+      "batchnormalization":true,
+      "dropoutratio":0.2,
+      "lastactivation":"relu",
+      "middleactivation":"relu",
+      "lr":1e-3,
+      "decay_steps":20000,
+      "decay_rate":0.95
+    }
     }
