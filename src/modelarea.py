@@ -10,25 +10,21 @@ from scipy.stats import genpareto
 tfd = tfp.distributions
 
 class lhmodel():
-    def __init__(self,modelparams):
-        self.depth=64
-        self.alpha=0.0
-        self.beta=1.0
-        self.N_STEPS=200
-        self.infeatures=
-        self.outfeatures=
-        self.units=
-        self.kernel_initializer='he_normal'
-        self.bias_initializer='he_uniform'
-        self.droupout=
-        self.batchnormalization=
-        self.dropoutratio=
-        self.lastactivation=
-        self.middleactivation=
-
-        self.lr=
-        self.decay_steps=
-        self.decay_rate=
+    def __init__(self,modelparam):
+        self.depth=modelparam['depth']
+        self.infeatures=modelparam['infeatures']
+        self.outfeatures=modelparam['outfeatures']
+        self.units=modelparam['units']
+        self.kernel_initializer=modelparam['kernel_initializer']
+        self.bias_initializer=modelparam['bias_initializer']
+        self.droupout=modelparam['droupout']
+        self.batchnormalization=modelparam['batchnormalization']
+        self.dropoutratio=modelparam['dropoutratio']
+        self.lastactivation=modelparam['lastactivation']
+        self.middleactivation=modelparam['middleactivation']
+        self.lr=modelparam['lr']
+        self.decay_steps=modelparam['decay_steps']
+        self.decay_rate=modelparam['decay_rate']
         self.opt=tf.keras.optimizers.Adam
 
     def getAreaDensityModel(self):
@@ -50,12 +46,22 @@ class lhmodel():
         self.optimizer = opt(learning_rate=1e-3)
     
     def gevloss(self,ytrue,ypred):
-    
-    def gevmetric(self,ytrue,ypred)
+        scale=ypred[:,0]
+        conc=ypred[:,1]
+        dist=tfp.distributions.GeneralizedExtremeValue(loc=0.0,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=True,name='GeneralizedExtremeValue')
+        negloglik=-dist.log_prob(ytrue)
+        return tf.reduce_sum(negloglik)
+    def gevmetric(self,ytrue,ypred):
+        dist=tfp.distributions.GeneralizedExtremeValue(loc=0.0,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=True,name='GeneralizedExtremeValue')
+        lik=dist.prob(ytrue)
+        return tf.reduce_mean(lik)
 
     def compileModel(self,weights=None):
         self.model.compile(optimizer=self.optimizer, loss=self.gevloss, metrics=gevmetric)
     
+'''
+#old version of code only used for reference. 
+
 
 class ADModel():
     def __init__(self,loc,scale,shape):
@@ -139,14 +145,12 @@ class ADModel():
             tf.equal(y, 0), y, y * tf.math.log1p(nonzero_conc * z))
         return -tf.math.log(scale) - tf.where(eq_zero, z, where_nonzero)
 
-        
+
     def distributionLoss(self,ytrue,ypred):
-        #loc=ypred[:,0]
         scale=ypred[:,0]
         conc=ypred[:,1]
-        dist=tfp.distributions.GeneralizedPareto(loc=self.loc, scale=scale, concentration=conc)
-        negloglik=-dist.log_prob(ytrue+1)
-    
+        dist=tfp.distributions.GeneralizedExtremeValue(0.0,scale,coc,validate_args=False,allow_nan_stats=True,name='GeneralizedExtremeValue')
+        negloglik=-dist.log_prob(ytrue)
         return tf.reduce_sum(negloglik)
 
     def MSE(self,ytrue,ypred):
@@ -189,3 +193,4 @@ class ADModel():
         self.model.compile(optimizer=self.optimizer, loss=self.distributionLoss, metrics='mae')
     
         
+'''
