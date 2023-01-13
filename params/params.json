@@ -1,52 +1,45 @@
 {
-    "compsin_inargs":{
-      "folder": "LxSim/IM_ls",
-      "csv_file": "LxSim/Sites.csv",
-      "number_groups": 5,
-      "stations_in_group": 80,
-      "event_name": "IM",
-      "dirs_read": [
-        "vx",
-        "vy",
-        "vz"
-      ]
-    },"salvus_inargs":{
-      "h5File": "salvus/Surface.h5",
-      "sluCentroid": "Data/SU_V4/SU_V4_filtered.shp",
-      "EPSG": "30170",
-      "filterDegree": 4,
-      "filterfreq": 1.5
+    "dataprepinargs":{
+      "variables": [
+      "clay",
+      "organic",
+      "HorizontalCurvature_mean",
+      "HorizontalCurvature_stdDev",
+      "VerticalCurvature_mean",
+      "VerticalCurvature_stdDev",
+      "aspect_mean",
+      "aspect_stdDev",
+      "elevation_mean",
+      "elevation_stdDev",
+      "slope_mean",
+      "slope_stdDev",
+      "ig",
+      "mt",
+      "mtpu",
+      "nd",
+      "pa",
+      "pb",
+      "smmx",
+      "smmxmt",
+      "ssmx",
+      "ssmxcl",
+      "suad",
+      "sumx",
+      "ndviMe",
+      "ndviSt",
+      "precMe",
+      "precSt",
+      "precMx"],
+      "constcols":["cat", "clay","organic", "HorizontalCurvature_mean","HorizontalCurvature_stdDev","VerticalCurvature_mean","VerticalCurvature_stdDev",
+      "aspect_mean","aspect_stdDev","elevation_mean","elevation_stdDev","slope_mean","slope_stdDev", "ig","mt","mtpu","nd","pa","pb","smmx","smmxmt","ssmx","ssmxcl","suad","sumx"],
+      "slopeunits": "Data/SlopeUnits/SlopeUnits_V3.shp",
+      "covars": "Data/Covars/AllCovars2.csv",
+      "normalize": true,
+      "inventory":"Data/Inventory/DataFile5_-_12920ASMinventory.shp",
+      "epsg":32645,
+      "workingdir":"/home/dahala/extremevaluelandslides/",
+      "startyear":1988,
+      "testsize":0.3
     },
-    "grargs":{
-      "EPSG": "32654",
-      "inventory": "Data/Yagi_and_others_2009/Yagi_and_others_2009.shp",
-      "slopeunits": "Data/SU_V4/SU_V4_filtered.shp",
-      "interpolator": "Bicubic",
-      "covars": "Data/Covars/JapanCovars_V2.csv",
-      "n_cluster":329,
-      "nodes_cluster":16
-     
-    },
-    "clsargs":{
-      "seq_len": 10747,
-      "gc_layer_sizes":[32,32,32] ,
-      "gc_activations":["relu","relu","relu"] ,
-      "GRU_layer_sizes":[128,128,128,128],
-      "GRU_activations":["tanh","tanh","tanh","tanh"]
-     
-    },
-    "trainargs":{
-      "initial_lr":1e-4,
-      "decay_step":10000,
-      "decay_rate":0.9,
-      "focal_gamma":4.0,
-      "Nepoch":100,
-      "ckpt":"GNN_EQ_Sus",
-      "batch":1,
-      "tensorboard_log":"GNN_TB/"
-
-
-
-
+    "modelparam":{}
     }
-}
