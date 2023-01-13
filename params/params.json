@@ -56,5 +56,11 @@
       "lr":1e-3,
       "decay_steps":20000,
       "decay_rate":0.95
+    },
+    "trainparam":{
+      "nepoch":100,
+      "ckpt":"checkpoints/",
+      "batchsize":32,
+      "valsplit":0.3
     }
     }

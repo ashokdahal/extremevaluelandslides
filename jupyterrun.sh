@@ -14,7 +14,7 @@ export XDG_RUNTIME_DIR=""
 node=$(hostname -s)
 user=$(whoami)
 submit_host=${SLURM_SUBMIT_HOST}
-port=8889
+port=8890
 
 echo $node pinned to port $port
 # print tunneling instructions jupyter-log
