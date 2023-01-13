@@ -76,9 +76,8 @@ class ADModel():
 
     def getAreaDensityModel(self,in_num=17,out_num=1):
 
-        features_only=Input((17))
+        features_only=Input((in_num))
 
-            
         x=layers.Dense(units=64,name=f'AR_DN_0',kernel_initializer='he_normal',bias_initializer='he_uniform')(features_only)
         for i in range(1,self.depth+1):
             x=layers.Dense(units=64,name=f'AR_DN_{str(i)}',kernel_initializer='he_normal',bias_initializer='he_uniform')(x)
