@@ -16,9 +16,9 @@ class readGPDData():
         covardir=self.dataparam["covars"]
         inventorydir=self.dataparam["inventory"]
         slopeunitdir=self.dataparam["slopeunits"]
-        self.covars=pd.read_csv(self.wd+covardir)
-        self.df_inventory=gpd.read_file(self.wd+inventorydir)
-        self.df_slopeunit=gpd.read_file(self.wd+slopeunitdir)
+        self.covars=pd.read_csv(self.wd+covardir).dropna()
+        self.df_inventory=gpd.read_file(self.wd+inventorydir).dropna()
+        self.df_slopeunit=gpd.read_file(self.wd+slopeunitdir).dropna()
         self.df_inventory=self.df_inventory.to_crs(epsg=self.dataparam["epsg"])
         self.df_slopeunit=self.df_slopeunit.to_crs(epsg=self.dataparam["epsg"])
 
@@ -68,6 +68,7 @@ class readGPDData():
                 clean_covar=alldata
             else:
                 clean_covar=pd.concat([clean_covar,alldata])
+        clean_covar=clean_covar.dropna()
         Xtrain=clean_covar[self.dataparam['variables']].to_numpy()
         Ytrain=clean_covar['area_density'].to_numpy()
         self.X_train, self.X_test, self.Y_train, self.Y_test = train_test_split(Xtrain,Ytrain, test_size=self.dataparam['testsize'], random_state=420)
