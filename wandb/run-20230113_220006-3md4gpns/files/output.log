@@ -1,0 +1,223 @@
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2023-01-13 22:02:40.519599: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-13 22:02:44.644417: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 10404 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1080 Ti, pci bus id: 0000:b2:00.0, compute capability: 6.1
+Epoch 1/100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 1810/44835 [>.............................] - ETA: 25:50 - loss: nan - gevmetric: nanThe autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+
+
+ 127/2803 [>.............................] - ETA: 1:38 - loss: nan - gevmetric: nanEpoch 1/100
+
+
+
+  89/2803 [..............................] - ETA: 1:41 - loss: nan - gevmetric: nanEpoch 1/100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1285/2803 [============>.................] - ETA: 56s - loss: nan - gevmetric: nanEpoch 1/100
+
+
+
+ 127/2803 [>.............................] - ETA: 1:41 - loss: nan - gevmetric: nanEpoch 1/100
+
+
+
+
+
+
+
+
+
+
+
+ 611/2803 [=====>........................] - ETA: 1:23 - loss: nan - gevmetric: nanThe autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+
+
+
+
+
+
+
+
+
+ 473/2784 [====>.........................] - ETA: 1:27 - loss: nan - gevmetric: nanEpoch 1/100
+
+
+
+ 145/2784 [>.............................] - ETA: 1:41 - loss: nan - gevmetric: nanThe autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+
+
+
+
+ 249/2784 [=>............................] - ETA: 1:35 - loss: nan - gevmetric: nanThe autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+
+
+  99/2784 [>.............................] - ETA: 1:41 - loss: nan - gevmetric: nanThe autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+
+
+
+
+
+
+
+
+ 409/2784 [===>..........................] - ETA: 1:29 - loss: -10136893.0000 - gevmetric: nanThe autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+
+
+
+
+
+
+
+
+
+ 511/2784 [====>.........................] - ETA: 1:26 - loss: -13733175.0000 - gevmetric: nanThe autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+
+
+
+
+
+
+
+
+ 385/2784 [===>..........................] - ETA: 1:30 - loss: -9244788.0000 - gevmetric: nanWARNING:tensorflow:Model was constructed with shape (None, 29) for input KerasTensor(type_spec=TensorSpec(shape=(None, 29), dtype=tf.float32, name='input_13'), name='input_13', description="created by layer 'input_13'"), but it was called on an input with incompatible shape (None,).
+WARNING:tensorflow:Model was constructed with shape (None, 29) for input KerasTensor(type_spec=TensorSpec(shape=(None, 29), dtype=tf.float32, name='input_13'), name='input_13', description="created by layer 'input_13'"), but it was called on an input with incompatible shape (None,).
+WARNING:tensorflow:Model was constructed with shape (None, 29) for input KerasTensor(type_spec=TensorSpec(shape=(None, 29), dtype=tf.float32, name='input_13'), name='input_13', description="created by layer 'input_13'"), but it was called on an input with incompatible shape (None,).
+1/1 [==============================] - 1s 1s/step
+1/1 [==============================] - 0s 32ms/step
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1/1 [==============================] - 1s 1s/step 21s - loss: nan - gevmetric: nan
+Epoch 1/100
+
+
+
+
+
+
+

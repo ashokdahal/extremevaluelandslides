@@ -24,6 +24,6 @@ def trainmodel(model,xdata,ydata,args):
                      epochs=NUMBER_EPOCHS,
                      batch_size=BATCH_SIZE,
                      validation_split=validation_split,
-                     verbose=1, callbacks=[model_checkpoint_callback,WandbMetricsLogger(log_freq='epoch')]
+                     verbose=1, callbacks=[model_checkpoint_callback,WandbMetricsLogger(log_freq='batch')]
                     )
     return hist

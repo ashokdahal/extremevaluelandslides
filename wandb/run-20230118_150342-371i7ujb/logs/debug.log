@@ -1,0 +1,66 @@
+2023-01-18 15:03:42,151 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Configure stats pid to 122621
+2023-01-18 15:03:42,151 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Loading settings from /home/dahala/.config/wandb/settings
+2023-01-18 15:03:42,152 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Loading settings from /home/dahala/extremevaluelandslides/wandb/settings
+2023-01-18 15:03:42,152 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-01-18 15:03:42,152 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-01-18 15:03:42,152 INFO    MainThread:122621 [wandb_init.py:_log_setup():476] Logging user logs to /home/dahala/extremevaluelandslides/wandb/run-20230118_150342-371i7ujb/logs/debug.log
+2023-01-18 15:03:42,152 INFO    MainThread:122621 [wandb_init.py:_log_setup():477] Logging internal logs to /home/dahala/extremevaluelandslides/wandb/run-20230118_150342-371i7ujb/logs/debug-internal.log
+2023-01-18 15:03:42,152 INFO    MainThread:122621 [wandb_init.py:_jupyter_setup():426] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x2b21c9b6feb0>
+2023-01-18 15:03:42,152 INFO    MainThread:122621 [wandb_init.py:init():516] calling init triggers
+2023-01-18 15:03:42,152 INFO    MainThread:122621 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {'bs': 12}
+2023-01-18 15:03:42,153 INFO    MainThread:122621 [wandb_init.py:init():569] starting backend
+2023-01-18 15:03:42,153 INFO    MainThread:122621 [wandb_init.py:init():573] setting up manager
+2023-01-18 15:03:42,156 INFO    MainThread:122621 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-01-18 15:03:42,175 INFO    MainThread:122621 [wandb_init.py:init():580] backend started and connected
+2023-01-18 15:03:42,184 INFO    MainThread:122621 [wandb_run.py:_label_probe_notebook():1116] probe notebook
+2023-01-18 15:03:42,193 INFO    MainThread:122621 [wandb_run.py:_label_probe_notebook():1126] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-01-18 15:03:42,193 INFO    MainThread:122621 [wandb_init.py:init():658] updated telemetry
+2023-01-18 15:03:42,238 INFO    MainThread:122621 [wandb_init.py:init():693] communicating run to backend with 60 second timeout
+2023-01-18 15:03:42,982 INFO    MainThread:122621 [wandb_run.py:_on_init():2006] communicating current version
+2023-01-18 15:03:43,348 INFO    MainThread:122621 [wandb_run.py:_on_init():2010] got version response upgrade_message: "wandb version 0.13.9 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-01-18 15:03:43,348 INFO    MainThread:122621 [wandb_init.py:init():728] starting run threads in backend
+2023-01-18 15:03:48,382 INFO    MainThread:122621 [wandb_run.py:_console_start():1986] atexit reg
+2023-01-18 15:03:48,382 INFO    MainThread:122621 [wandb_run.py:_redirect():1844] redirect: SettingsConsole.WRAP_RAW
+2023-01-18 15:03:48,383 INFO    MainThread:122621 [wandb_run.py:_redirect():1909] Wrapping output streams.
+2023-01-18 15:03:48,383 INFO    MainThread:122621 [wandb_run.py:_redirect():1931] Redirects installed.
+2023-01-18 15:03:48,383 INFO    MainThread:122621 [wandb_init.py:init():765] run started, returning control to user process
+2023-01-18 15:03:56,120 INFO    MainThread:122621 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-18 15:03:56,120 INFO    MainThread:122621 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-18 15:03:57,645 INFO    MainThread:122621 [wandb_init.py:_resume_backend():398] resuming backend
+2023-01-18 15:06:03,886 INFO    MainThread:122621 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-18 15:06:03,886 INFO    MainThread:122621 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-18 15:06:08,945 INFO    MainThread:122621 [wandb_init.py:_resume_backend():398] resuming backend
+2023-01-18 15:06:47,954 INFO    MainThread:122621 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-18 15:06:47,954 INFO    MainThread:122621 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-18 15:06:50,872 INFO    MainThread:122621 [wandb_init.py:_resume_backend():398] resuming backend
+2023-01-18 15:06:50,877 INFO    MainThread:122621 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-18 15:06:50,877 INFO    MainThread:122621 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-18 15:06:51,394 INFO    MainThread:122621 [wandb_init.py:_resume_backend():398] resuming backend
+2023-01-18 15:06:51,401 INFO    MainThread:122621 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-18 15:06:51,402 INFO    MainThread:122621 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-18 15:06:51,908 INFO    MainThread:122621 [wandb_init.py:_resume_backend():398] resuming backend
+2023-01-18 15:17:53,548 INFO    MainThread:122621 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-18 15:17:53,548 INFO    MainThread:122621 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Configure stats pid to 122621
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Loading settings from /home/dahala/.config/wandb/settings
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Loading settings from /home/dahala/extremevaluelandslides/wandb/settings
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_init.py:_log_setup():476] Logging user logs to /home/dahala/extremevaluelandslides/wandb/run-20230118_151803-w2mao8h5/logs/debug.log
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_init.py:_log_setup():477] Logging internal logs to /home/dahala/extremevaluelandslides/wandb/run-20230118_151803-w2mao8h5/logs/debug-internal.log
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_init.py:init():516] calling init triggers
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {'bs': 12}
+2023-01-18 15:18:03,812 INFO    MainThread:122621 [wandb_init.py:init():535] re-initializing run, found existing run on stack: 371i7ujb
+2023-01-18 15:18:03,816 INFO    MainThread:122621 [wandb_run.py:_finish():1753] finishing run dahal/Extreme Value/371i7ujb
+2023-01-18 15:18:03,816 INFO    MainThread:122621 [jupyter.py:save_history():448] not saving jupyter history
+2023-01-18 15:18:03,816 INFO    MainThread:122621 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-18 15:18:03,816 INFO    MainThread:122621 [wandb_init.py:_jupyter_teardown():408] cleaning up jupyter logic
+2023-01-18 15:18:03,816 INFO    MainThread:122621 [wandb_run.py:_atexit_cleanup():1955] got exitcode: 0
+2023-01-18 15:18:03,817 INFO    MainThread:122621 [wandb_run.py:_restore():1938] restore
+2023-01-18 15:18:03,817 INFO    MainThread:122621 [wandb_run.py:_restore():1944] restore done
+2023-01-18 15:18:11,585 INFO    MainThread:122621 [wandb_run.py:_footer_history_summary_info():3408] rendering history
+2023-01-18 15:18:11,586 INFO    MainThread:122621 [wandb_run.py:_footer_history_summary_info():3440] rendering summary
+2023-01-18 15:18:11,602 INFO    MainThread:122621 [wandb_run.py:_footer_sync_info():3364] logging synced files

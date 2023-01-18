@@ -42,10 +42,10 @@
       "testsize":0.3
     },
     "modelparam":{
-      "depth":64,
+      "depth":12,
       "infeatures":29,
       "outfeatures":2,
-      "units":128,
+      "units":32,
       "kernel_initializer":"he_normal",
       "bias_initializer":"he_uniform",
       "droupout":true,
@@ -53,14 +53,16 @@
       "dropoutratio":0.2,
       "lastactivation":"relu",
       "middleactivation":"relu",
-      "lr":1e-3,
+      "lr":1e-4,
       "decay_steps":20000,
-      "decay_rate":0.95
+      "decay_rate":0.95,
+      "weight_nolandslide":1,
+      "weight_landslide":9
     },
     "trainparam":{
       "nepoch":100,
       "ckpt":"checkpoints/",
-      "batchsize":32,
+      "batchsize":1024,
       "valsplit":0.3
     }
     }

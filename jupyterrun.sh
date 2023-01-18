@@ -7,7 +7,7 @@
 #SBATCH --time=05:00:00 
 #SBATCH --partition=batch 
 
-source activate mlashok
+source activate dlashok
 
 # get tunneling info
 export XDG_RUNTIME_DIR=""

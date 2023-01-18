@@ -25,15 +25,16 @@ class lhmodel():
         self.lr=modelparam['lr']
         self.decay_steps=modelparam['decay_steps']
         self.decay_rate=modelparam['decay_rate']
+        self.landslideweight=modelparam['weight_landslide']
+        self.nolandslideweight=modelparam['weight_nolandslide']
         self.opt=tf.keras.optimizers.Adam
 
     def getAreaDensityModel(self):
 
         features_only=Input((self.infeatures))
-
         x=layers.Dense(units=self.units,name=f'AR_DN_0',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(features_only)
         for i in range(1,self.depth+1):
-            x=layers.Dense(activation=self.middleactivation,units=self.units,name=f'AR_DN_{str(i)}',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(x)
+            x=layers.Dense(activation='selu',units=self.units,name=f'AR_DN_{str(i)}',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(x)
             if self.batchnormalization:
                 x= layers.BatchNormalization()(x)
             if self.droupout:
@@ -43,25 +44,45 @@ class lhmodel():
 
     def getOptimizer(self,):
         lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(initial_learning_rate=self.lr,decay_steps=self.decay_steps,decay_rate=self.decay_rate,staircase=True)
-        self.optimizer = self.opt(learning_rate=1e-3)
+        self.optimizer = tf.keras.optimizers.Adam(learning_rate=lr_schedule)
     
     def gevloss(self,ytrue,ypred):
-        scale=ypred[:,0]
+        loc=ypred[:,0]
+        scale=ypred[:,1]
         conc=ypred[:,1]
-        dist=tfp.distributions.GeneralizedExtremeValue(loc=0.0,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=True,name='GeneralizedExtremeValue')
-        negloglik=-dist.log_prob(ytrue)
-        return tf.reduce_sum(negloglik)
+        dist=tfp.distributions.GeneralizedExtremeValue(loc=loc,scale=0.1,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
+        lik=-dist.log_prob(ytrue)
+        return tf.reduce_mean(lik)
     def gevmetric(self,ytrue,ypred):
-        scale=ypred[:,0]
+        loc=ypred[:,0]
+        scale=ypred[:,1]
         conc=ypred[:,1]
-        dist=tfp.distributions.GeneralizedExtremeValue(loc=0.0,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=True,name='GeneralizedExtremeValue')
+        dist=tfp.distributions.GeneralizedExtremeValue(loc=loc,scale=0.1,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
+        lik=dist.prob(ytrue)
+        return tf.reduce_mean(lik)
+    def gpdloss(self,ytrue,ypred):
+        loc=0.0
+        scale=tf.math.exp(ypred[:,0])
+        conc=ypred[:,1]
+        weight=(ytrue[ytrue>0.0]).astype(int)
+        weight[weight==0]=self.nolandslideweight
+        weight[weight==1]=self.landslideweight
+
+        dist=tfp.distributions.GeneralizedPareto(loc=loc,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
+        lik=-dist.log_prob(ytrue)
+        return tf.reduce_mean(lik)
+    def gpdmetric(self,ytrue,ypred):
+        loc=0.0
+        scale=tf.math.exp(ypred[:,0])
+        conc=ypred[:,1]
+        dist=tfp.distributions.GeneralizedPareto(loc=loc,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
         lik=dist.prob(ytrue)
         return tf.reduce_mean(lik)
 
     def preparemodel(self,weights=None):
         self.getAreaDensityModel()
         self.getOptimizer()
-        self.model.compile(optimizer=self.optimizer, loss=self.gevloss, metrics=self.gevmetric)
+        self.model.compile(optimizer=self.optimizer, loss=self.gpdloss, metrics=self.gpdmetric)
     
 '''
 #old version of code only used for reference. 
