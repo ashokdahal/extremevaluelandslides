@@ -181,3 +181,4 @@ Epoch 9/100
 
 
 2784/2784 [==============================] - ETA: 0s - loss: 0.0100 - gpdmetric: 0.9954
+Epoch 9: val_loss improved from 0.00955 to 0.00955, saving model to checkpoints/

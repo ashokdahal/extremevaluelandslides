@@ -1,0 +1,244 @@
+{
+    "os": "Linux-3.10.0-1160.76.1.el7.x86_64-x86_64-with-glibc2.17",
+    "python": "3.9.15",
+    "heartbeatAt": "2023-01-19T08:42:23.037867",
+    "startedAt": "2023-01-19T08:42:21.510365",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "testrun-jvsc-34c96d5e-083a-42e6-a68c-c4db4563c6359c41409c-f4a2-4a11-94ab-d0e8f97a2679.ipynb",
+    "root": "/home/dahala/extremevaluelandslides",
+    "git": {
+        "remote": "https://github.com/ashokdahal/extremevaluelandslides.git",
+        "commit": "c8e8fc4265f84807acf40c50f277054a15fe54eb"
+    },
+    "email": null,
+    "host": "gpu510-32",
+    "username": "dahala",
+    "executable": "/home/dahala/miniconda3/envs/dlashok/bin/python",
+    "cpu_count": 40,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 1295.9400000000007,
+        "min": 1000.0,
+        "max": 3900.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1197.814,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3599.853,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3599.853,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1029.51,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1591.491,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1100.006,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.213,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1782.836,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1100.006,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2296.447,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1040.344,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.213,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.213,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1037.444,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1089.477,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2500.152,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2500.152,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 999.908,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1000.061,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1997.375,
+            "min": 1000.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1014.251,
+            "min": 1000.0,
+            "max": 3900.0
+        }
+    ],
+    "disk": {
+        "total": 188.29364395141602,
+        "used": 7.1214141845703125
+    },
+    "gpu": "Tesla V100-PCIE-32GB",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla V100-PCIE-32GB",
+            "memory_total": 34359738368
+        }
+    ],
+    "memory": {
+        "total": 376.58728790283203
+    }
+}

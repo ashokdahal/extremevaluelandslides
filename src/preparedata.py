@@ -71,7 +71,48 @@ class readGPDData():
         clean_covar=clean_covar.dropna()
         Xtrain=clean_covar[self.dataparam['variables']].to_numpy()
         Ytrain=clean_covar['area_density'].to_numpy()
+        if self.dataparam['removezeros']:
+            idx=np.where(Ytrain>0)[0]
+            Xtrain=Xtrain[idx]
+            Ytrain=Ytrain[idx]
         self.X_train, self.X_test, self.Y_train, self.Y_test = train_test_split(Xtrain,Ytrain, test_size=self.dataparam['testsize'], random_state=420)
         self.covars=None
         self.df_inventory=None
         self.df_slopeunit=None
+
+    def preparedatainference(self,return_period=5):
+       
+        self.readfiles()
+        design_rainfall=pd.read_csv(self.wd+self.dataparam["design_rainfall"])
+        constant_covars=self.covars[self.dataparam['constcols']]
+        #calculate the mean NDVI
+        for i in tqdm(range(self.nyears)):
+            ndvi_mean_col=f'{str(i)}_NdMx_mean'
+            ndvi_stdv_col=f'{str(i)}_NdMx_stdDev'
+            # prec_mean_col=f'b{str(i+1)}_PMx'
+            # prec_stdv_col=f'b{str(i+1)}_PMe'
+            # prec_maxi_col=f'b{str(i+1)}_PSt'
+            covars_subset=self.covars[['cat',ndvi_mean_col,ndvi_stdv_col]]
+            covars_subset=covars_subset.rename(columns={ndvi_mean_col:'ndviMe',ndvi_stdv_col:'ndviSt'})
+            covar_data=covars_subset
+
+            if i==0:
+                ndvis=covar_data
+            else:
+                ndvis=pd.concat([ndvis,covar_data])
+        ndvis=ndvis.groupby(['cat']).mean().reset_index()
+
+        alldata=pd.merge(constant_covars,ndvis,left_on='cat',right_on='cat',left_index=False)
+        #now add rainfall data 
+        rainfall_subset=design_rainfall[['cat',f'st_design_{return_period}',f'me_design_{return_period}',f'mx_design_{return_period}']]
+        rainfall_subset=rainfall_subset.rename(columns={f'me_design_{return_period}':'precMe',f'st_design_{return_period}':'precSt',f'mx_design_{return_period}':'precMx'})
+
+        clean_covar=pd.merge(alldata,rainfall_subset,left_on='cat',right_on='cat',left_index=False)
+
+        clean_covar=clean_covar.dropna()
+        self.Xinference=clean_covar[self.dataparam['variables']].to_numpy()
+        self.InferenceID=clean_covar['cat'].to_numpy()
+        self.covars=None
+        self.df_inventory=None
+        self.df_slopeunit=None
+

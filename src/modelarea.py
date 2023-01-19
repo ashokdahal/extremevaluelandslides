@@ -32,48 +32,47 @@ class lhmodel():
     def getAreaDensityModel(self):
 
         features_only=Input((self.infeatures))
-        x=layers.Dense(units=self.units,name=f'AR_DN_0',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(features_only)
+        x=layers.Dense(units=self.units,activation='selu',name=f'AR_DN_0',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(features_only)
         for i in range(1,self.depth+1):
-            x=layers.Dense(activation='selu',units=self.units,name=f'AR_DN_{str(i)}',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(x)
+            x=layers.Dense(activation=None,units=self.units,name=f'AR_DN_{str(i)}',kernel_initializer=self.kernel_initializer,bias_initializer=self.bias_initializer)(x)
             if self.batchnormalization:
                 x= layers.BatchNormalization()(x)
             if self.droupout:
-                x= layers.Dropout(self.dropoutratio)(x)      
-        out_areaDen=layers.Dense(units=self.outfeatures,activation='relu',name='areaDen')(x)
+                x= layers.Dropout(self.dropoutratio)(x) 
+            x=layers.LeakyReLU(alpha=0.2)(x)     
+        out_areaDen=layers.Dense(units=self.outfeatures,activation='exponential',name='areaDen')(x)
         self.model = Model(inputs=features_only, outputs=out_areaDen)
 
     def getOptimizer(self,):
         lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(initial_learning_rate=self.lr,decay_steps=self.decay_steps,decay_rate=self.decay_rate,staircase=True)
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=lr_schedule)
     
-    def gevloss(self,ytrue,ypred):
-        loc=ypred[:,0]
-        scale=ypred[:,1]
-        conc=ypred[:,1]
-        dist=tfp.distributions.GeneralizedExtremeValue(loc=loc,scale=0.1,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
-        lik=-dist.log_prob(ytrue)
-        return tf.reduce_mean(lik)
-    def gevmetric(self,ytrue,ypred):
-        loc=ypred[:,0]
-        scale=ypred[:,1]
-        conc=ypred[:,1]
-        dist=tfp.distributions.GeneralizedExtremeValue(loc=loc,scale=0.1,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
-        lik=dist.prob(ytrue)
-        return tf.reduce_mean(lik)
+    # def gevloss(self,ytrue,ypred):
+    #     loc=ypred[:,0]
+    #     scale=ypred[:,1]
+    #     conc=ypred[:,1]
+    #     dist=tfp.distributions.GeneralizedExtremeValue(loc=loc,scale=0.1,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
+    #     lik=-dist.log_prob(ytrue)
+    #     return tf.reduce_mean(lik)
+    # def gevmetric(self,ytrue,ypred):
+    #     loc=ypred[:,0]
+    #     scale=ypred[:,1]
+    #     conc=ypred[:,1]
+    #     dist=tfp.distributions.GeneralizedExtremeValue(loc=loc,scale=0.1,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
+    #     lik=dist.prob(ytrue)
+    #     return tf.reduce_mean(lik)
     def gpdloss(self,ytrue,ypred):
         loc=0.0
-        scale=tf.math.exp(ypred[:,0])
+        scale=ypred[:,0]
         conc=ypred[:,1]
-        weight=(ytrue[ytrue>0.0]).astype(int)
-        weight[weight==0]=self.nolandslideweight
-        weight[weight==1]=self.landslideweight
-
+        weight=tf.cast(ytrue>0,dtype=tf.dtypes.float32)
+        weight=(weight*(self.landslideweight-self.nolandslideweight))+self.landslideweight
         dist=tfp.distributions.GeneralizedPareto(loc=loc,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
         lik=-dist.log_prob(ytrue)
-        return tf.reduce_mean(lik)
+        return tf.reduce_mean(tf.math.multiply(lik,weight))
     def gpdmetric(self,ytrue,ypred):
         loc=0.0
-        scale=tf.math.exp(ypred[:,0])
+        scale=ypred[:,0]
         conc=ypred[:,1]
         dist=tfp.distributions.GeneralizedPareto(loc=loc,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
         lik=dist.prob(ytrue)
