@@ -7,8 +7,8 @@ def inferenceLH(model,model_weights,xdata,rp):
     trained_model=model
     gpd_params=trained_model.predict(xdata)
     loc=0.0
-    scale=gpd_params[:,0]
-    conc=gpd_params[:,1]
+    scale=tf.math.exp(gpd_params[:,0])
+    conc=tf.nn.relu(gpd_params[:,1])
     dists=tfp.distributions.GeneralizedPareto(loc=0,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue') 
 
     intensity=dists.quantile((1-1/rp)).numpy()

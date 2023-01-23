@@ -39,8 +39,8 @@ class lhmodel():
                 x= layers.BatchNormalization()(x)
             if self.droupout:
                 x= layers.Dropout(self.dropoutratio)(x) 
-            x=layers.LeakyReLU(alpha=0.2)(x)     
-        out_areaDen=layers.Dense(units=self.outfeatures,activation='exponential',name='areaDen')(x)
+            x=layers.LeakyReLU(alpha=0.02)(x)     
+        out_areaDen=layers.Dense(units=self.outfeatures,activation='selu',name='areaDen')(x)
         self.model = Model(inputs=features_only, outputs=out_areaDen)
 
     def getOptimizer(self,):
@@ -63,20 +63,20 @@ class lhmodel():
     #     return tf.reduce_mean(lik)
     def gpdloss(self,ytrue,ypred):
         loc=0.0
-        scale=ypred[:,0]
-        conc=ypred[:,1]
+        scale=tf.math.exp(ypred[:,0])
+        conc=tf.nn.relu(ypred[:,1])
         weight=tf.cast(ytrue>0,dtype=tf.dtypes.float32)
         weight=(weight*(self.landslideweight-self.nolandslideweight))+self.landslideweight
         dist=tfp.distributions.GeneralizedPareto(loc=loc,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
         lik=-dist.log_prob(ytrue)
-        return tf.reduce_mean(tf.math.multiply(lik,weight))
+        return tf.reduce_sum(tf.math.multiply(lik,weight))
     def gpdmetric(self,ytrue,ypred):
         loc=0.0
-        scale=ypred[:,0]
-        conc=ypred[:,1]
+        scale=tf.math.exp(ypred[:,0])
+        conc=tf.nn.relu(ypred[:,1])
         dist=tfp.distributions.GeneralizedPareto(loc=loc,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
         lik=dist.prob(ytrue)
-        return tf.reduce_mean(lik)
+        return tf.reduce_sum(lik)
 
     def preparemodel(self,weights=None):
         self.getAreaDensityModel()

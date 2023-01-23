@@ -40,11 +40,11 @@
       "workingdir":"/home/dahala/extremevaluelandslides/",
       "design_rainfall":"Data/DesignRainfall/ExtractedDesignRainfall.csv",
       "startyear":1988,
-      "testsize":0.3,
-      "removezeros":true
+      "testsize":0.1,
+      "removezeros":false
     },
     "modelparam":{
-      "depth":32,
+      "depth":8,
       "infeatures":29,
       "outfeatures":2,
       "units":64,
@@ -59,12 +59,12 @@
       "decay_steps":50000,
       "decay_rate":0.95,
       "weight_nolandslide":1,
-      "weight_landslide":1
+      "weight_landslide":9
     },
     "trainparam":{
-      "nepoch":100,
+      "nepoch":20,
       "ckpt":"checkpoints/",
-      "batchsize":64,
+      "batchsize":1024,
       "valsplit":0.3
     }
     }
