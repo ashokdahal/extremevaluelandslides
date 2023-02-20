@@ -1,0 +1,204 @@
+{
+    "os": "Linux-3.10.0-1160.76.1.el7.x86_64-x86_64-with-glibc2.17",
+    "python": "3.10.8",
+    "heartbeatAt": "2023-01-13T17:20:40.923857",
+    "startedAt": "2023-01-13T17:20:26.915226",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "testrun-jvsc-c9bc49fe-865c-4aaa-90e0-a556d9b240d15277bd15-9903-4287-b425-a89421e2ec4c.ipynb",
+    "root": "/home/dahala/extremevaluelandslides",
+    "git": {
+        "remote": "https://github.com/ashokdahal/extremevaluelandslides.git",
+        "commit": "d50cf9b28cd2667e341967c913298b073eccc86b"
+    },
+    "email": null,
+    "host": "gpu504-37",
+    "username": "dahala",
+    "executable": "/home/dahala/miniconda3/envs/mlashok/bin/python",
+    "cpu_count": 32,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 1.5624062500000002,
+        "min": 1000.0,
+        "max": 3700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1.044,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 3.399,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 3.399,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.998,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.1,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 0.999,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.1,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.191,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.1,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.193,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.496,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 0.999,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 0.999,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.6,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.497,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.6,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.977,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.359,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 3.399,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.824,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.063,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.478,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.188,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.697,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.296,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 0.999,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1.0,
+            "min": 1000.0,
+            "max": 3700.0
+        }
+    ],
+    "disk": {
+        "total": 188.29451370239258,
+        "used": 6.986202239990234
+    },
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        }
+    ],
+    "memory": {
+        "total": 376.58902740478516
+    }
+}

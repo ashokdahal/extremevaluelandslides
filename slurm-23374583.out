@@ -1,0 +1,132 @@
+gpu510-32 pinned to port 8890
+
+To connect to the compute node gpu510-32 on IBEX running your jupyter notebook server,
+you need to run following two commands in a terminal
+
+1. Command to create ssh tunnel from you workstation/laptop to cs-login:
+ssh -L 8890:gpu510-32:8890 dahala@glogin.ibex.kaust.edu.sa
+
+Copy the link provided below by jupyter-server and replace the NODENAME with localhost before pasting it in your browser on your workstation/laptop
+
+[I 14:54:12.484 NotebookApp] Serving notebooks from local directory: /home/dahala/extremevaluelandslides
+[I 14:54:12.485 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 14:54:12.485 NotebookApp] http://gpu510-32:8890/?token=448b4455aac3f8d7fbf2f1e15c2ddf87d7fe7aeab8e0f103
+[I 14:54:12.485 NotebookApp]  or http://127.0.0.1:8890/?token=448b4455aac3f8d7fbf2f1e15c2ddf87d7fe7aeab8e0f103
+[I 14:54:12.485 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 14:54:12.500 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/dahala/.local/share/jupyter/runtime/nbserver-121558-open.html
+    Or copy and paste one of these URLs:
+        http://gpu510-32:8890/?token=448b4455aac3f8d7fbf2f1e15c2ddf87d7fe7aeab8e0f103
+     or http://127.0.0.1:8890/?token=448b4455aac3f8d7fbf2f1e15c2ddf87d7fe7aeab8e0f103
+[I 15:00:56.665 NotebookApp] Creating new notebook in 
+[I 15:00:57.443 NotebookApp] Kernel started: 0196c600-39bf-4474-a3c6-2356b4ebc3ef, name: python3
+[W 15:00:57.468 NotebookApp] delete /testrun-jvsc-fce17f56-62c2-41d4-98fc-d927182be8983afe9530-7b32-4118-81c9-3aebc6114da1.ipynb
+2023-01-18 15:01:04.223222: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 15:01:19.944131: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-01-18 15:01:32.670648: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-01-18 15:02:14.677427: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 15:02:14.678778: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 15:02:14.678797: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-01-18 15:06:08.978996: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 15:06:44.970024: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30974 MB memory:  -> device: 0, name: Tesla V100-PCIE-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+[I 15:17:52.706 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 15:18:12.740 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+Exception in thread SockSrvRdThr:
+Traceback (most recent call last):
+  File "/home/dahala/miniconda3/envs/dlashok/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+    self.run()
+  File "/home/dahala/miniconda3/envs/dlashok/lib/python3.9/site-packages/wandb/sdk/service/server_sock.py", line 112, in run
+    shandler(sreq)
+  File "/home/dahala/miniconda3/envs/dlashok/lib/python3.9/site-packages/wandb/sdk/service/server_sock.py", line 173, in server_record_publish
+    iface = self._mux.get_stream(stream_id).interface
+  File "/home/dahala/miniconda3/envs/dlashok/lib/python3.9/site-packages/wandb/sdk/service/streams.py", line 199, in get_stream
+    stream = self._streams[stream_id]
+KeyError: '371i7ujb'
+[I 15:18:20.238 NotebookApp] Kernel restarted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 15:18:20.244 NotebookApp] Starting buffering for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+[I 15:18:20.256 NotebookApp] Restoring connection for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+2023-01-18 15:18:24.565255: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 15:18:24.719975: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-01-18 15:18:24.773615: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-01-18 15:18:28.689868: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 15:18:28.689968: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 15:18:28.689979: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-01-18 15:20:04.444570: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 15:20:05.028216: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30974 MB memory:  -> device: 0, name: Tesla V100-PCIE-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+[I 15:25:18.977 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.005 MB of 0.005 MB uploaded (0.000 MB deduped)[I 15:25:27.209 NotebookApp] Kernel restarted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 15:25:27.213 NotebookApp] Starting buffering for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+[I 15:25:27.219 NotebookApp] Restoring connection for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+[W 15:25:31.732 NotebookApp] Nudge: attempt 10 on kernel 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+2023-01-18 15:25:34.451302: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 15:25:34.604275: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-01-18 15:25:34.657373: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-01-18 15:25:39.547042: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 15:25:39.547244: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 15:25:39.547268: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-01-18 15:27:28.774946: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 15:27:29.303824: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30974 MB memory:  -> device: 0, name: Tesla V100-PCIE-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+[I 15:33:12.030 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+wandb: Waiting for W&B process to finish... (success).
+[I 16:03:35.215 NotebookApp] Kernel restarted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 16:03:35.220 NotebookApp] Starting buffering for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+[I 16:03:35.228 NotebookApp] Restoring connection for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+[W 16:03:39.740 NotebookApp] Nudge: attempt 10 on kernel 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+2023-01-18 16:03:40.498296: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 16:03:40.687463: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-01-18 16:03:40.742639: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-01-18 16:03:44.702483: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 16:03:44.702686: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 16:03:44.702711: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-01-18 16:05:24.129537: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 16:05:24.714085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30974 MB memory:  -> device: 0, name: Tesla V100-PCIE-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+[I 16:17:22.605 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 16:29:58.190 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.005 MB of 0.120 MB uploaded (0.000 MB deduped)[I 17:10:25.566 NotebookApp] Kernel restarted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 17:10:25.574 NotebookApp] Starting buffering for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+[I 17:10:25.587 NotebookApp] Restoring connection for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+[W 17:10:30.100 NotebookApp] Nudge: attempt 10 on kernel 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+2023-01-18 17:16:22.069415: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 17:16:22.224896: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-01-18 17:16:22.275992: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-01-18 17:16:26.085429: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 17:16:26.085531: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 17:16:26.085542: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-01-18 17:16:56.788217: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 17:16:57.920756: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30974 MB memory:  -> device: 0, name: Tesla V100-PCIE-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+[I 17:27:36.587 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 17:30:45.833 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 17:40:33.647 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 18:37:07.063 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 18:40:48.521 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+wandb: Waiting for W&B process to finish... (success).
+[I 18:40:55.974 NotebookApp] Kernel restarted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+[I 18:40:55.980 NotebookApp] Starting buffering for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+[I 18:40:55.990 NotebookApp] Restoring connection for 0196c600-39bf-4474-a3c6-2356b4ebc3ef:42be317f-ed11-4941-95c3-d2958153f414
+2023-01-18 18:41:00.661270: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 18:41:00.846083: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-01-18 18:41:00.900894: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-01-18 18:41:05.439073: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 18:41:05.439221: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/dahala/miniconda3/envs/dlashok/lib/
+2023-01-18 18:41:05.439236: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-01-18 18:42:44.814904: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-18 18:42:45.483541: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30974 MB memory:  -> device: 0, name: Tesla V100-PCIE-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+[I 18:59:22.083 NotebookApp] Kernel interrupted: 0196c600-39bf-4474-a3c6-2356b4ebc3ef
+wandb: Network error (ReadTimeout), entering retry loop.
+slurmstepd: error: *** JOB 23374583 ON gpu510-32 CANCELLED AT 2023-01-18T20:53:47 DUE TO TIME LIMIT ***

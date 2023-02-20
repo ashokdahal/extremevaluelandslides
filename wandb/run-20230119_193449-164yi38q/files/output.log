@@ -1,0 +1,373 @@
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Epoch 1/100
+2023-01-19 19:36:04.300825: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-19 19:36:04.946424: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 10404 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1080 Ti, pci bus id: 0000:b1:00.0, compute capability: 6.1
+
+
+222/223 [============================>.] - ETA: 0s - loss: 1.4178 - gpdmetric: 0.4953
+Epoch 1: val_loss improved from inf to 1.05094, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 28s 89ms/step - loss: 1.4175 - gpdmetric: 0.4956 - val_loss: 1.0509 - val_gpdmetric: 0.5377
+Epoch 2/100
+
+221/223 [============================>.] - ETA: 0s - loss: 1.2407 - gpdmetric: 0.6091
+Epoch 2: val_loss improved from 1.05094 to 0.97718, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 85ms/step - loss: 1.2399 - gpdmetric: 0.6096 - val_loss: 0.9772 - val_gpdmetric: 0.6201
+Epoch 3/100
+
+
+222/223 [============================>.] - ETA: 0s - loss: 1.1536 - gpdmetric: 0.6821
+Epoch 3: val_loss improved from 0.97718 to 0.93639, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 84ms/step - loss: 1.1530 - gpdmetric: 0.6823 - val_loss: 0.9364 - val_gpdmetric: 0.6969
+Epoch 4/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 1.1035 - gpdmetric: 0.7233
+Epoch 4: val_loss improved from 0.93639 to 0.92415, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 86ms/step - loss: 1.1035 - gpdmetric: 0.7233 - val_loss: 0.9241 - val_gpdmetric: 0.7303
+Epoch 5/100
+
+
+222/223 [============================>.] - ETA: 0s - loss: 1.0815 - gpdmetric: 0.7358
+Epoch 5: val_loss improved from 0.92415 to 0.91984, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 85ms/step - loss: 1.0815 - gpdmetric: 0.7365 - val_loss: 0.9198 - val_gpdmetric: 0.7556
+Epoch 6/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 1.0576 - gpdmetric: 0.7423
+Epoch 6: val_loss improved from 0.91984 to 0.91820, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 84ms/step - loss: 1.0576 - gpdmetric: 0.7423 - val_loss: 0.9182 - val_gpdmetric: 0.7615
+Epoch 7/100
+
+223/223 [==============================] - ETA: 0s - loss: 1.0365 - gpdmetric: 0.7517
+Epoch 7: val_loss improved from 0.91820 to 0.91752, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 84ms/step - loss: 1.0365 - gpdmetric: 0.7517 - val_loss: 0.9175 - val_gpdmetric: 0.7626
+Epoch 8/100
+
+
+222/223 [============================>.] - ETA: 0s - loss: 1.0235 - gpdmetric: 0.7489
+Epoch 8: val_loss improved from 0.91752 to 0.91733, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 85ms/step - loss: 1.0234 - gpdmetric: 0.7486 - val_loss: 0.9173 - val_gpdmetric: 0.7668
+Epoch 9/100
+
+221/223 [============================>.] - ETA: 0s - loss: 1.0065 - gpdmetric: 0.7528
+Epoch 9: val_loss improved from 0.91733 to 0.91726, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 84ms/step - loss: 1.0070 - gpdmetric: 0.7528 - val_loss: 0.9173 - val_gpdmetric: 0.7616
+Epoch 10/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 0.9977 - gpdmetric: 0.7536
+Epoch 10: val_loss improved from 0.91726 to 0.91715, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 86ms/step - loss: 0.9977 - gpdmetric: 0.7536 - val_loss: 0.9171 - val_gpdmetric: 0.7639
+Epoch 11/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 0.9856 - gpdmetric: 0.7525
+Epoch 11: val_loss did not improve from 0.91715
+223/223 [==============================] - 5s 24ms/step - loss: 0.9856 - gpdmetric: 0.7525 - val_loss: 0.9172 - val_gpdmetric: 0.7702
+Epoch 12/100
+
+
+221/223 [============================>.] - ETA: 0s - loss: 0.9752 - gpdmetric: 0.7567
+Epoch 12: val_loss did not improve from 0.91715
+223/223 [==============================] - 5s 24ms/step - loss: 0.9758 - gpdmetric: 0.7572 - val_loss: 0.9172 - val_gpdmetric: 0.7716
+Epoch 13/100
+
+222/223 [============================>.] - ETA: 0s - loss: 0.9674 - gpdmetric: 0.7574
+Epoch 13: val_loss did not improve from 0.91715
+223/223 [==============================] - 5s 24ms/step - loss: 0.9679 - gpdmetric: 0.7573 - val_loss: 0.9172 - val_gpdmetric: 0.7701
+Epoch 14/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 0.9611 - gpdmetric: 0.7570
+Epoch 14: val_loss improved from 0.91715 to 0.91714, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 85ms/step - loss: 0.9611 - gpdmetric: 0.7570 - val_loss: 0.9171 - val_gpdmetric: 0.7684
+Epoch 15/100
+
+
+221/223 [============================>.] - ETA: 0s - loss: 0.9546 - gpdmetric: 0.7574
+Epoch 15: val_loss improved from 0.91714 to 0.91714, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 84ms/step - loss: 0.9535 - gpdmetric: 0.7584 - val_loss: 0.9171 - val_gpdmetric: 0.7628
+Epoch 16/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 0.9489 - gpdmetric: 0.7564
+Epoch 16: val_loss did not improve from 0.91714
+223/223 [==============================] - 5s 24ms/step - loss: 0.9489 - gpdmetric: 0.7564 - val_loss: 0.9172 - val_gpdmetric: 0.7674
+Epoch 17/100
+
+222/223 [============================>.] - ETA: 0s - loss: 0.9439 - gpdmetric: 0.7564
+Epoch 17: val_loss improved from 0.91714 to 0.91714, saving model to checkpoints/
+INFO:tensorflow:Assets written to: checkpoints/assets
+223/223 [==============================] - 19s 85ms/step - loss: 0.9436 - gpdmetric: 0.7564 - val_loss: 0.9171 - val_gpdmetric: 0.7649
+Epoch 18/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 0.9391 - gpdmetric: 0.7560
+Epoch 18: val_loss did not improve from 0.91714
+223/223 [==============================] - 5s 24ms/step - loss: 0.9391 - gpdmetric: 0.7560 - val_loss: 0.9172 - val_gpdmetric: 0.7695
+Epoch 19/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 0.9343 - gpdmetric: 0.7599
+Epoch 19: val_loss did not improve from 0.91714
+223/223 [==============================] - 5s 24ms/step - loss: 0.9343 - gpdmetric: 0.7599 - val_loss: 0.9172 - val_gpdmetric: 0.7686
+Epoch 20/100
+
+223/223 [==============================] - ETA: 0s - loss: 0.9292 - gpdmetric: 0.7583
+Epoch 20: val_loss did not improve from 0.91714
+223/223 [==============================] - 5s 24ms/step - loss: 0.9292 - gpdmetric: 0.7583 - val_loss: 0.9173 - val_gpdmetric: 0.7653
+Epoch 21/100
+
+
+223/223 [==============================] - ETA: 0s - loss: 0.9267 - gpdmetric: 0.7583
+Epoch 21: val_loss did not improve from 0.91714
+223/223 [==============================] - 5s 24ms/step - loss: 0.9267 - gpdmetric: 0.7583 - val_loss: 0.9173 - val_gpdmetric: 0.7693
+Epoch 22/100
+128/223 [================>.............] - ETA: 2s - loss: 0.9125 - gpdmetric: 0.7661
+217/223 [============================>.] - ETA: 0s - loss: 0.9208 - gpdmetric: 0.7591
+Epoch 23/100===========================] - 5s 24ms/step - loss: 0.9236 - gpdmetric: 0.7583 - val_loss: 0.9172 - val_gpdmetric: 0.7665
+Epoch 23/100===========================] - 5s 24ms/step - loss: 0.9236 - gpdmetric: 0.7583 - val_loss: 0.9172 - val_gpdmetric: 0.7665
+160/223 [====================>.........] - ETA: 1s - loss: 0.9307 - gpdmetric: 0.7509
+ 10/223 [>.............................] - ETA: 4s - loss: 0.9161 - gpdmetric: 0.7428.7564 - val_loss: 0.9172 - val_gpdmetric: 0.7702
+Epoch 24/100
+103/223 [============>.................] - ETA: 2s - loss: 0.9020 - gpdmetric: 0.7712.7564 - val_loss: 0.9172 - val_gpdmetric: 0.7702
+195/223 [=========================>....] - ETA: 0s - loss: 0.9197 - gpdmetric: 0.7620.7564 - val_loss: 0.9172 - val_gpdmetric: 0.7702
+ 31/223 [===>..........................] - ETA: 4s - loss: 0.9517 - gpdmetric: 0.7463.7599 - val_loss: 0.9173 - val_gpdmetric: 0.7667
+136/223 [=================>............] - ETA: 1s - loss: 0.9188 - gpdmetric: 0.7538.7599 - val_loss: 0.9173 - val_gpdmetric: 0.7667
+223/223 [==============================] - ETA: 0s - loss: 0.9168 - gpdmetric: 0.7557.7599 - val_loss: 0.9173 - val_gpdmetric: 0.7667
+ 76/223 [=========>....................] - ETA: 3s - loss: 0.9077 - gpdmetric: 0.7581.7557 - val_loss: 0.9172 - val_gpdmetric: 0.7680
+168/223 [=====================>........] - ETA: 1s - loss: 0.9182 - gpdmetric: 0.7559.7557 - val_loss: 0.9172 - val_gpdmetric: 0.7680
+ 18/223 [=>............................] - ETA: 4s - loss: 0.8469 - gpdmetric: 0.7717.7588 - val_loss: 0.9172 - val_gpdmetric: 0.7683
+108/223 [=============>................] - ETA: 2s - loss: 0.8675 - gpdmetric: 0.7764.7588 - val_loss: 0.9172 - val_gpdmetric: 0.7683
+198/223 [=========================>....] - ETA: 0s - loss: 0.9098 - gpdmetric: 0.7614.7588 - val_loss: 0.9172 - val_gpdmetric: 0.7683
+ 51/223 [=====>........................] - ETA: 3s - loss: 0.9279 - gpdmetric: 0.7419.7600 - val_loss: 0.9173 - val_gpdmetric: 0.7664
+141/223 [=================>............] - ETA: 1s - loss: 0.9154 - gpdmetric: 0.7530.7600 - val_loss: 0.9173 - val_gpdmetric: 0.7664
+222/223 [============================>.] - ETA: 0s - loss: 0.9116 - gpdmetric: 0.7558.7600 - val_loss: 0.9173 - val_gpdmetric: 0.7664
+ 84/223 [==========>...................] - ETA: 3s - loss: 0.8955 - gpdmetric: 0.7657.7558 - val_loss: 0.9173 - val_gpdmetric: 0.7676
+176/223 [======================>.......] - ETA: 1s - loss: 0.9087 - gpdmetric: 0.7605.7558 - val_loss: 0.9173 - val_gpdmetric: 0.7676
+ 28/223 [==>...........................] - ETA: 4s - loss: 0.9179 - gpdmetric: 0.7703.7594 - val_loss: 0.9172 - val_gpdmetric: 0.7638
+119/223 [===============>..............] - ETA: 2s - loss: 0.9093 - gpdmetric: 0.7595.7594 - val_loss: 0.9172 - val_gpdmetric: 0.7638
+212/223 [===========================>..] - ETA: 0s - loss: 0.9126 - gpdmetric: 0.7581.7594 - val_loss: 0.9172 - val_gpdmetric: 0.7638
+ 64/223 [=======>......................] - ETA: 3s - loss: 0.9262 - gpdmetric: 0.7502.7579 - val_loss: 0.9172 - val_gpdmetric: 0.7674
+154/223 [===================>..........] - ETA: 1s - loss: 0.8984 - gpdmetric: 0.7627.7579 - val_loss: 0.9172 - val_gpdmetric: 0.7674
+  7/223 [..............................] - ETA: 4s - loss: 0.9226 - gpdmetric: 0.7605.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+ 97/223 [============>.................] - ETA: 2s - loss: 0.9009 - gpdmetric: 0.7648.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+190/223 [========================>.....] - ETA: 0s - loss: 0.9020 - gpdmetric: 0.7617.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+223/223 [==============================] - ETA: 0s - loss: 0.9072 - gpdmetric: 0.7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+INFO:tensorflow:Assets written to: checkpoints/assetsloss: 0.9072 - gpdmetric: 0.7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+Epoch 33/100low:Assets written to: checkpoints/assetsloss: 0.9072 - gpdmetric: 0.7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+Epoch 33/100low:Assets written to: checkpoints/assetsloss: 0.9072 - gpdmetric: 0.7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+Epoch 34/100l_loss did not improve from 0.91712assetsloss: 0.9072 - gpdmetric: 0.7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+Epoch 34/100l_loss did not improve from 0.91712assetsloss: 0.9072 - gpdmetric: 0.7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+Epoch 34/100l_loss did not improve from 0.91712assetsloss: 0.9072 - gpdmetric: 0.7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+Epoch 34: val_loss improved from 0.91712 to 0.91710, saving model to checkpoints/7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+Epoch 34: val_loss improved from 0.91712 to 0.91710, saving model to checkpoints/7597.7610 - val_loss: 0.9172 - val_gpdmetric: 0.7672
+ 76/223 [=========>....................] - ETA: 3s - loss: 0.9078 - gpdmetric: 0.75790.7592 - val_loss: 0.9171 - val_gpdmetric: 0.7657
+169/223 [=====================>........] - ETA: 1s - loss: 0.9105 - gpdmetric: 0.76060.7592 - val_loss: 0.9171 - val_gpdmetric: 0.7657
+ 19/223 [=>............................] - ETA: 4s - loss: 0.8967 - gpdmetric: 0.7654.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+111/223 [=============>................] - ETA: 2s - loss: 0.8997 - gpdmetric: 0.7651.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+201/223 [==========================>...] - ETA: 0s - loss: 0.9093 - gpdmetric: 0.7618.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+222/223 [============================>.] - ETA: 0s - loss: 0.9054 - gpdmetric: 0.7614.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+INFO:tensorflow:Assets written to: checkpoints/assetsloss: 0.9054 - gpdmetric: 0.7614.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+Epoch 37/100low:Assets written to: checkpoints/assetsloss: 0.9054 - gpdmetric: 0.7614.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+Epoch 37/100low:Assets written to: checkpoints/assetsloss: 0.9054 - gpdmetric: 0.7614.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+Epoch 37: val_loss improved from 0.91706 to 0.91702, saving model to checkpoints/7614.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+Epoch 37: val_loss improved from 0.91706 to 0.91702, saving model to checkpoints/7614.7609 - val_loss: 0.9171 - val_gpdmetric: 0.76827
+ 67/223 [========>.....................] - ETA: 3s - loss: 0.8913 - gpdmetric: 0.76070.7619 - val_loss: 0.9170 - val_gpdmetric: 0.7653
+135/223 [=================>............] - ETA: 1s - loss: 0.8956 - gpdmetric: 0.75650.7619 - val_loss: 0.9170 - val_gpdmetric: 0.7653
+222/223 [============================>.] - ETA: 0s - loss: 0.9031 - gpdmetric: 0.76050.7619 - val_loss: 0.9170 - val_gpdmetric: 0.7653
+ 76/223 [=========>....................] - ETA: 3s - loss: 0.9069 - gpdmetric: 0.7614.7614 - val_loss: 0.9171 - val_gpdmetric: 0.76513
+169/223 [=====================>........] - ETA: 1s - loss: 0.9102 - gpdmetric: 0.7591.7614 - val_loss: 0.9171 - val_gpdmetric: 0.76513
+ 19/223 [=>............................] - ETA: 4s - loss: 0.8791 - gpdmetric: 0.7723.7619 - val_loss: 0.9170 - val_gpdmetric: 0.76583
+109/223 [=============>................] - ETA: 2s - loss: 0.9032 - gpdmetric: 0.7596.7619 - val_loss: 0.9170 - val_gpdmetric: 0.76583
+202/223 [==========================>...] - ETA: 0s - loss: 0.9026 - gpdmetric: 0.7625.7619 - val_loss: 0.9170 - val_gpdmetric: 0.76583
+ 52/223 [=====>........................] - ETA: 3s - loss: 0.9109 - gpdmetric: 0.7534.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+143/223 [==================>...........] - ETA: 1s - loss: 0.8978 - gpdmetric: 0.7620.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+221/223 [============================>.] - ETA: 0s - loss: 0.8987 - gpdmetric: 0.7638.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+221/223 [============================>.] - ETA: 0s - loss: 0.8987 - gpdmetric: 0.7638.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+Epoch 42/100low:Assets written to: checkpoints/assetsloss: 0.8987 - gpdmetric: 0.7638.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+Epoch 42/100low:Assets written to: checkpoints/assetsloss: 0.8987 - gpdmetric: 0.7638.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+Epoch 42/100low:Assets written to: checkpoints/assetsloss: 0.8987 - gpdmetric: 0.7638.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+Epoch 42: val_loss improved from 0.91702 to 0.91700, saving model to checkpoints/7638.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+Epoch 42: val_loss improved from 0.91702 to 0.91700, saving model to checkpoints/7638.7630 - val_loss: 0.9170 - val_gpdmetric: 0.76443
+ 88/223 [==========>...................] - ETA: 2s - loss: 0.9115 - gpdmetric: 0.75930.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+178/223 [======================>.......] - ETA: 0s - loss: 0.8991 - gpdmetric: 0.76650.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+223/223 [==============================] - ETA: 0s - loss: 0.9008 - gpdmetric: 0.76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+INFO:tensorflow:Assets written to: checkpoints/assetsloss: 0.9008 - gpdmetric: 0.76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+Epoch 44/100low:Assets written to: checkpoints/assetsloss: 0.9008 - gpdmetric: 0.76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+Epoch 44/100low:Assets written to: checkpoints/assetsloss: 0.9008 - gpdmetric: 0.76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+Epoch 45/100l_loss did not improve from 0.91699assetsloss: 0.9008 - gpdmetric: 0.76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+Epoch 45/100l_loss did not improve from 0.91699assetsloss: 0.9008 - gpdmetric: 0.76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+Epoch 45/100l_loss did not improve from 0.91699assetsloss: 0.9008 - gpdmetric: 0.76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+Epoch 45: val_loss improved from 0.91699 to 0.91698, saving model to checkpoints/76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+Epoch 45: val_loss improved from 0.91699 to 0.91698, saving model to checkpoints/76450.7627 - val_loss: 0.9170 - val_gpdmetric: 0.7639
+ 88/223 [==========>...................] - ETA: 2s - loss: 0.8737 - gpdmetric: 0.77400.7670 - val_loss: 0.9170 - val_gpdmetric: 0.7620
+180/223 [=======================>......] - ETA: 0s - loss: 0.8976 - gpdmetric: 0.76650.7670 - val_loss: 0.9170 - val_gpdmetric: 0.7620
+ 31/223 [===>..........................] - ETA: 4s - loss: 0.9059 - gpdmetric: 0.7665.7652 - val_loss: 0.9170 - val_gpdmetric: 0.76300
+122/223 [===============>..............] - ETA: 2s - loss: 0.8980 - gpdmetric: 0.7661.7652 - val_loss: 0.9170 - val_gpdmetric: 0.76300
+214/223 [===========================>..] - ETA: 0s - loss: 0.9016 - gpdmetric: 0.7646.7652 - val_loss: 0.9170 - val_gpdmetric: 0.76300
+ 64/223 [=======>......................] - ETA: 3s - loss: 0.8507 - gpdmetric: 0.7804.7649 - val_loss: 0.9170 - val_gpdmetric: 0.76300
+157/223 [====================>.........] - ETA: 1s - loss: 0.8882 - gpdmetric: 0.7714.7649 - val_loss: 0.9170 - val_gpdmetric: 0.76300
+  7/223 [..............................] - ETA: 4s - loss: 0.8987 - gpdmetric: 0.7682.7679 - val_loss: 0.9170 - val_gpdmetric: 0.76000
+ 97/223 [============>.................] - ETA: 2s - loss: 0.8986 - gpdmetric: 0.7610.7679 - val_loss: 0.9170 - val_gpdmetric: 0.76000
+189/223 [========================>.....] - ETA: 0s - loss: 0.8966 - gpdmetric: 0.7648.7679 - val_loss: 0.9170 - val_gpdmetric: 0.76000
+ 41/223 [====>.........................] - ETA: 4s - loss: 0.9188 - gpdmetric: 0.7531.7637 - val_loss: 0.9170 - val_gpdmetric: 0.76370
+134/223 [=================>............] - ETA: 1s - loss: 0.9059 - gpdmetric: 0.7614.7637 - val_loss: 0.9170 - val_gpdmetric: 0.76370
+221/223 [============================>.] - ETA: 0s - loss: 0.8990 - gpdmetric: 0.7646.7637 - val_loss: 0.9170 - val_gpdmetric: 0.76370
+ 76/223 [=========>....................] - ETA: 3s - loss: 0.9191 - gpdmetric: 0.7612.7644 - val_loss: 0.9170 - val_gpdmetric: 0.76460
+168/223 [=====================>........] - ETA: 1s - loss: 0.8953 - gpdmetric: 0.7670.7644 - val_loss: 0.9170 - val_gpdmetric: 0.76460
+ 19/223 [=>............................] - ETA: 4s - loss: 0.8893 - gpdmetric: 0.7607.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+103/223 [============>.................] - ETA: 2s - loss: 0.9016 - gpdmetric: 0.7666.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+201/223 [==========================>...] - ETA: 0s - loss: 0.8976 - gpdmetric: 0.7645.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+222/223 [============================>.] - ETA: 0s - loss: 0.8994 - gpdmetric: 0.7650.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+INFO:tensorflow:Assets written to: checkpoints/assetsloss: 0.8994 - gpdmetric: 0.7650.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+Epoch 53/100low:Assets written to: checkpoints/assetsloss: 0.8994 - gpdmetric: 0.7650.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+Epoch 53/100low:Assets written to: checkpoints/assetsloss: 0.8994 - gpdmetric: 0.7650.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+Epoch 54/100l_loss did not improve from 0.91697assetsloss: 0.8994 - gpdmetric: 0.7650.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+Epoch 54/100l_loss did not improve from 0.91697assetsloss: 0.8994 - gpdmetric: 0.7650.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+Epoch 54/100l_loss did not improve from 0.91697assetsloss: 0.8994 - gpdmetric: 0.7650.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+Epoch 54: val_loss improved from 0.91697 to 0.91696, saving model to checkpoints/7650.7681 - val_loss: 0.9170 - val_gpdmetric: 0.76490
+ 13/223 [>.............................] - ETA: 4s - loss: 0.9793 - gpdmetric: 0.72120.7681 - val_loss: 0.9170 - val_gpdmetric: 0.7609
+103/223 [============>.................] - ETA: 2s - loss: 0.8922 - gpdmetric: 0.76750.7681 - val_loss: 0.9170 - val_gpdmetric: 0.7609
+196/223 [=========================>....] - ETA: 0s - loss: 0.8989 - gpdmetric: 0.76540.7681 - val_loss: 0.9170 - val_gpdmetric: 0.7609
+ 34/223 [===>..........................] - ETA: 4s - loss: 0.9206 - gpdmetric: 0.7460.7660 - val_loss: 0.9170 - val_gpdmetric: 0.76269
+137/223 [=================>............] - ETA: 1s - loss: 0.8981 - gpdmetric: 0.7607.7660 - val_loss: 0.9170 - val_gpdmetric: 0.76269
+206/223 [==========================>...] - ETA: 0s - loss: 0.8902 - gpdmetric: 0.7688.7660 - val_loss: 0.9170 - val_gpdmetric: 0.76269
+ 58/223 [======>.......................] - ETA: 3s - loss: 0.9044 - gpdmetric: 0.7677.7679 - val_loss: 0.9170 - val_gpdmetric: 0.76309
+151/223 [===================>..........] - ETA: 1s - loss: 0.9007 - gpdmetric: 0.7661.7679 - val_loss: 0.9170 - val_gpdmetric: 0.76309
+  1/223 [..............................] - ETA: 4s - loss: 0.7890 - gpdmetric: 0.7757.7665 - val_loss: 0.9170 - val_gpdmetric: 0.76319
+ 94/223 [===========>..................] - ETA: 2s - loss: 0.8785 - gpdmetric: 0.7771.7665 - val_loss: 0.9170 - val_gpdmetric: 0.76319
+184/223 [=======================>......] - ETA: 0s - loss: 0.9009 - gpdmetric: 0.7709.7665 - val_loss: 0.9170 - val_gpdmetric: 0.76319
+ 37/223 [===>..........................] - ETA: 4s - loss: 0.8964 - gpdmetric: 0.7561.7700 - val_loss: 0.9170 - val_gpdmetric: 0.76219
+127/223 [================>.............] - ETA: 2s - loss: 0.8991 - gpdmetric: 0.7655.7700 - val_loss: 0.9170 - val_gpdmetric: 0.76219
+217/223 [============================>.] - ETA: 0s - loss: 0.8977 - gpdmetric: 0.7659.7700 - val_loss: 0.9170 - val_gpdmetric: 0.76219
+ 70/223 [========>.....................] - ETA: 3s - loss: 0.9064 - gpdmetric: 0.7657.7667 - val_loss: 0.9170 - val_gpdmetric: 0.76549
+163/223 [====================>.........] - ETA: 1s - loss: 0.8842 - gpdmetric: 0.7766.7667 - val_loss: 0.9170 - val_gpdmetric: 0.76549
+ 13/223 [>.............................] - ETA: 4s - loss: 0.8519 - gpdmetric: 0.7771.7715 - val_loss: 0.9170 - val_gpdmetric: 0.76349
+106/223 [=============>................] - ETA: 2s - loss: 0.8799 - gpdmetric: 0.7712.7715 - val_loss: 0.9170 - val_gpdmetric: 0.76349
+196/223 [=========================>....] - ETA: 0s - loss: 0.8983 - gpdmetric: 0.7683.7715 - val_loss: 0.9170 - val_gpdmetric: 0.76349
+ 48/223 [=====>........................] - ETA: 3s - loss: 0.8971 - gpdmetric: 0.7590.7686 - val_loss: 0.9170 - val_gpdmetric: 0.76279
+138/223 [=================>............] - ETA: 1s - loss: 0.9008 - gpdmetric: 0.7676.7686 - val_loss: 0.9170 - val_gpdmetric: 0.76279
+222/223 [============================>.] - ETA: 0s - loss: 0.8958 - gpdmetric: 0.7692.7686 - val_loss: 0.9170 - val_gpdmetric: 0.76279
+ 85/223 [==========>...................] - ETA: 2s - loss: 0.9157 - gpdmetric: 0.7605.7685 - val_loss: 0.9170 - val_gpdmetric: 0.76519
+175/223 [======================>.......] - ETA: 1s - loss: 0.9056 - gpdmetric: 0.7657.7685 - val_loss: 0.9170 - val_gpdmetric: 0.76519
+ 28/223 [==>...........................] - ETA: 4s - loss: 0.9252 - gpdmetric: 0.7650.7688 - val_loss: 0.9170 - val_gpdmetric: 0.76649
+121/223 [===============>..............] - ETA: 2s - loss: 0.8839 - gpdmetric: 0.7741.7688 - val_loss: 0.9170 - val_gpdmetric: 0.76649
+210/223 [===========================>..] - ETA: 0s - loss: 0.8919 - gpdmetric: 0.7751.7688 - val_loss: 0.9170 - val_gpdmetric: 0.76649
+ 69/223 [========>.....................] - ETA: 3s - loss: 0.8878 - gpdmetric: 0.7794.7725 - val_loss: 0.9170 - val_gpdmetric: 0.76329
+159/223 [====================>.........] - ETA: 1s - loss: 0.8944 - gpdmetric: 0.7709.7725 - val_loss: 0.9170 - val_gpdmetric: 0.76329
+ 13/223 [>.............................] - ETA: 4s - loss: 0.8686 - gpdmetric: 0.7877.7706 - val_loss: 0.9170 - val_gpdmetric: 0.76329
+106/223 [=============>................] - ETA: 2s - loss: 0.8942 - gpdmetric: 0.7700.7706 - val_loss: 0.9170 - val_gpdmetric: 0.76329
+196/223 [=========================>....] - ETA: 0s - loss: 0.8978 - gpdmetric: 0.7713.7706 - val_loss: 0.9170 - val_gpdmetric: 0.76329
+ 49/223 [=====>........................] - ETA: 3s - loss: 0.9014 - gpdmetric: 0.7672.7694 - val_loss: 0.9170 - val_gpdmetric: 0.76589
+142/223 [==================>...........] - ETA: 1s - loss: 0.9004 - gpdmetric: 0.7700.7694 - val_loss: 0.9170 - val_gpdmetric: 0.76589
+222/223 [============================>.] - ETA: 0s - loss: 0.8955 - gpdmetric: 0.7698.7694 - val_loss: 0.9170 - val_gpdmetric: 0.76589
+ 85/223 [==========>...................] - ETA: 3s - loss: 0.8876 - gpdmetric: 0.7677.7698 - val_loss: 0.9170 - val_gpdmetric: 0.76479
+175/223 [======================>.......] - ETA: 1s - loss: 0.9067 - gpdmetric: 0.7644.7698 - val_loss: 0.9170 - val_gpdmetric: 0.76479
+ 28/223 [==>...........................] - ETA: 4s - loss: 0.8763 - gpdmetric: 0.7946.7694 - val_loss: 0.9170 - val_gpdmetric: 0.76539
+121/223 [===============>..............] - ETA: 2s - loss: 0.8903 - gpdmetric: 0.7803.7694 - val_loss: 0.9170 - val_gpdmetric: 0.76539
+187/223 [========================>.....] - ETA: 0s - loss: 0.8922 - gpdmetric: 0.7768.7694 - val_loss: 0.9170 - val_gpdmetric: 0.76539
+ 43/223 [====>.........................] - ETA: 3s - loss: 0.8352 - gpdmetric: 0.7926.7736 - val_loss: 0.9170 - val_gpdmetric: 0.76189
+133/223 [================>.............] - ETA: 1s - loss: 0.8637 - gpdmetric: 0.7853.7736 - val_loss: 0.9170 - val_gpdmetric: 0.76189
+223/223 [==============================] - ETA: 0s - loss: 0.8954 - gpdmetric: 0.7727.7736 - val_loss: 0.9170 - val_gpdmetric: 0.76189
+ 76/223 [=========>....................] - ETA: 3s - loss: 0.9085 - gpdmetric: 0.7670.7727 - val_loss: 0.9170 - val_gpdmetric: 0.75769
+166/223 [=====================>........] - ETA: 1s - loss: 0.9060 - gpdmetric: 0.7609.7727 - val_loss: 0.9170 - val_gpdmetric: 0.75769
+ 19/223 [=>............................] - ETA: 4s - loss: 1.0089 - gpdmetric: 0.7370.7672 - val_loss: 0.9170 - val_gpdmetric: 0.76589
+108/223 [=============>................] - ETA: 2s - loss: 0.8811 - gpdmetric: 0.7798.7672 - val_loss: 0.9170 - val_gpdmetric: 0.76589
+201/223 [==========================>...] - ETA: 0s - loss: 0.8963 - gpdmetric: 0.7732.7672 - val_loss: 0.9170 - val_gpdmetric: 0.76589
+ 55/223 [======>.......................] - ETA: 3s - loss: 0.9037 - gpdmetric: 0.7627.7728 - val_loss: 0.9170 - val_gpdmetric: 0.76419
+147/223 [==================>...........] - ETA: 1s - loss: 0.8923 - gpdmetric: 0.7747.7728 - val_loss: 0.9170 - val_gpdmetric: 0.76419
+223/223 [==============================] - 5s 24ms/step - loss: 0.8953 - gpdmetric: 0.7723 - val_loss: 0.9170 - val_gpdmetric: 0.76119
+ 90/223 [===========>..................] - ETA: 2s - loss: 0.8644 - gpdmetric: 0.7921.7723 - val_loss: 0.9170 - val_gpdmetric: 0.76119
+183/223 [=======================>......] - ETA: 0s - loss: 0.9007 - gpdmetric: 0.7725.7723 - val_loss: 0.9170 - val_gpdmetric: 0.76119
+ 37/223 [===>..........................] - ETA: 4s - loss: 0.9102 - gpdmetric: 0.7621.7720 - val_loss: 0.9170 - val_gpdmetric: 0.75979
+130/223 [================>.............] - ETA: 2s - loss: 0.9123 - gpdmetric: 0.7619.7720 - val_loss: 0.9170 - val_gpdmetric: 0.75979
+220/223 [============================>.] - ETA: 0s - loss: 0.8951 - gpdmetric: 0.7690.7720 - val_loss: 0.9170 - val_gpdmetric: 0.75979
+ 73/223 [========>.....................] - ETA: 3s - loss: 0.9000 - gpdmetric: 0.7632.7693 - val_loss: 0.9170 - val_gpdmetric: 0.76719
+136/223 [=================>............] - ETA: 1s - loss: 0.8971 - gpdmetric: 0.7667.7693 - val_loss: 0.9170 - val_gpdmetric: 0.76719
+ 13/223 [>.............................] - ETA: 4s - loss: 0.9046 - gpdmetric: 0.7789.7720 - val_loss: 0.9170 - val_gpdmetric: 0.76509
+106/223 [=============>................] - ETA: 2s - loss: 0.9223 - gpdmetric: 0.7625.7720 - val_loss: 0.9170 - val_gpdmetric: 0.76509
+196/223 [=========================>....] - ETA: 0s - loss: 0.8913 - gpdmetric: 0.7706.7720 - val_loss: 0.9170 - val_gpdmetric: 0.76509
+ 49/223 [=====>........................] - ETA: 3s - loss: 0.8517 - gpdmetric: 0.7879.7714 - val_loss: 0.9170 - val_gpdmetric: 0.76689
+139/223 [=================>............] - ETA: 1s - loss: 0.9095 - gpdmetric: 0.7655.7714 - val_loss: 0.9170 - val_gpdmetric: 0.76689
+222/223 [============================>.] - ETA: 0s - loss: 0.8956 - gpdmetric: 0.7712.7714 - val_loss: 0.9170 - val_gpdmetric: 0.76689
+ 85/223 [==========>...................] - ETA: 3s - loss: 0.8833 - gpdmetric: 0.7750.7714 - val_loss: 0.9170 - val_gpdmetric: 0.76719
+177/223 [======================>.......] - ETA: 1s - loss: 0.8971 - gpdmetric: 0.7730.7714 - val_loss: 0.9170 - val_gpdmetric: 0.76719
+ 28/223 [==>...........................] - ETA: 4s - loss: 0.8958 - gpdmetric: 0.7614.7728 - val_loss: 0.9170 - val_gpdmetric: 0.76509
+118/223 [==============>...............] - ETA: 2s - loss: 0.8993 - gpdmetric: 0.7699.7728 - val_loss: 0.9170 - val_gpdmetric: 0.76509
+211/223 [===========================>..] - ETA: 0s - loss: 0.8935 - gpdmetric: 0.7733.7728 - val_loss: 0.9170 - val_gpdmetric: 0.76509
+ 64/223 [=======>......................] - ETA: 3s - loss: 0.8813 - gpdmetric: 0.7715.7726 - val_loss: 0.9170 - val_gpdmetric: 0.76589
+157/223 [====================>.........] - ETA: 1s - loss: 0.8882 - gpdmetric: 0.7782.7726 - val_loss: 0.9170 - val_gpdmetric: 0.76589
+ 10/223 [>.............................] - ETA: 4s - loss: 0.9599 - gpdmetric: 0.7425.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+100/223 [============>.................] - ETA: 2s - loss: 0.9043 - gpdmetric: 0.7695.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+192/223 [========================>.....] - ETA: 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 83/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 83/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 83/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 84/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 84/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 85/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 85/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 85/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 86/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 86/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 87/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 87/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 87/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 88/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 88/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 88/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 89/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 89/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 89/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 90/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 90/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 91/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 91/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 91/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 92/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 92/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 93/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 93/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 93/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 94/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 94/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 94/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 95/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 95/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 96/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 96/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 96/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 97/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 97/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 98/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 98/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 98/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 99/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 99/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 99/100l_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 100/100_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 100/100_loss did not improve from 0.91696 0s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+Epoch 100: val_loss did not improve from 0.916960s - loss: 0.8948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+2.10.1toreload extension is already loaded. To reload it, use:948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+ 200/2219 [=>............................] - ETA: 6s   t, use:948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+ 809/2219 [=========>....................] - ETA: 4s   t, use:948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+ 809/2219 [=========>....................] - ETA: 4s   t, use:948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+ 809/2219 [=========>....................] - ETA: 4s   t, use:948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+ 809/2219 [=========>....................] - ETA: 4s   t, use:948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+  %reload_ext autoreload.................] - ETA: 4s   t, use:948 - gpdmetric: 0.7716.7739 - val_loss: 0.9170 - val_gpdmetric: 0.76359
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]59

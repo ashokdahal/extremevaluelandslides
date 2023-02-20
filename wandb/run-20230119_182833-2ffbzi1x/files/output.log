@@ -1,0 +1,146 @@
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+No such comm: 5110e7e5d7d34ef8bb5a566ae74593e1
+No such comm: 7ecb8a42f31447aba6ac37276403041f
+No such comm: e7c4e0a7889044bf9efbd097669f7c0f
+No such comm: 3d4668ba8f814171b59322828e23d3f2
+No such comm: 92f32e946a394f9fb4b6854ac585f696
+No such comm: 0aba6ea5ce924169b546b0a7d37cbdcb
+No such comm: ada6925829c6441aa734b2586e32d0cf
+No such comm: 4eeca45ea5824ba79c947f0dcd685eb8
+No such comm: 71537c84782e48ad9bfb3bec1491f48b
+No such comm: 21cf236ae0d442b481ade1db43c0d700
+No such comm: 9e96420d3e6849188ab9786e094faedb
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+No such comm: 5a97eecfae8243f7928681b4089c5257
+No such comm: a6ce73cc8dcd46ad999fea260aa99198
+No such comm: 80f37c28d8f440918ac6b90a5325459e
+No such comm: cc75959520094da89d744ec4c2a864b9
+No such comm: 7ba1557c1e0542a79c9f4568f50a8e7f
+          ndviMe    ndviSt
+cat
+146074  0.224788  0.091596
+146128  0.426976  0.127112
+146176  0.612548  0.077342
+146177  0.485513  0.098009
+146178  0.415243  0.087136
+...          ...       ...
+375948  0.643161  0.079008
+375949  0.571529  0.052294
+375988  0.483357  0.081679
+375999  0.545823  0.033889
+376000  0.399870  0.069787
+[57670 rows x 2 columns]
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+No such comm: 2821d33497ea4586ae7ebce83b4174ff
+No such comm: c5dcbdcfa2df4230a164583a74a4b3bb
+No such comm: b457f63234454cc8afa1efe4594f9f28
+No such comm: 74278b89346044989ae03532b18f8fa1
+No such comm: 461fcf059c8544e383865c240c33fd13
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+No such comm: 1b8e3d4ac9f8428ea6cba83a514ac71b
+No such comm: bdb10a6286b2486a96070a92adfca163
+No such comm: 07d3bae40407460db0978abb1a461edd
+No such comm: 948560909f06496f9353f2916190dae6
+No such comm: d108dac6129d4913b16a4941998fb492
+          cat    ndviMe    ndviSt
+0      146074  0.224788  0.091596
+1      146128  0.426976  0.127112
+2      146176  0.612548  0.077342
+3      146177  0.485513  0.098009
+4      146178  0.415243  0.087136
+...       ...       ...       ...
+57665  375948  0.643161  0.079008
+57666  375949  0.571529  0.052294
+57667  375988  0.483357  0.081679
+57668  375999  0.545823  0.033889
+57669  376000  0.399870  0.069787
+[57670 rows x 3 columns]
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+No such comm: 361d6fb3124b48f8818804ab7698f728
+No such comm: 4db25e42afb04123a50c438e1e1f2484
+No such comm: 5788d97dbcbf494a9a6d1e72e3646cd3
+No such comm: ea3734dc88af4137b8a7eaa5d4395d2f
+No such comm: fccca1780d784c28ae6e32dff61144bf
+          cat       clay   organic  HorizontalCurvature_mean  \
+0      328069   7.313470  3.857892                  0.001225
+1      330938  13.804274  2.814837                  0.000041
+2      258925   9.657508  6.044555                 -0.000414
+3      258925   9.657508  6.044555                 -0.000414
+4      322424  12.162379  4.446162                  0.000233
+...       ...        ...       ...                       ...
+71459  272183  12.855998  3.206146                  0.000242
+71460  363207  17.456269  2.183412                 -0.000141
+71461  363207  17.456269  2.183412                 -0.000141
+71462  356954  16.239082  2.818992                 -0.000002
+71463  356954  16.239082  2.818992                 -0.000002
+       HorizontalCurvature_stdDev  VerticalCurvature_mean  \
+0                        0.002307               -0.000786
+1                        0.000407               -0.000105
+2                        0.002011               -0.000285
+3                        0.002011               -0.000285
+4                        0.002514               -0.000203
+...                           ...                     ...
+71459                    0.001510               -0.000305
+71460                    0.001006                0.000070
+71461                    0.001006                0.000070
+71462                    0.001786                0.000046
+71463                    0.001786                0.000046
+       VerticalCurvature_stdDev  aspect_mean  aspect_stdDev  elevation_mean  \
+0                      0.002012   149.984571     156.719280     1760.780761
+1                      0.000636   235.653516      80.420060      225.068661
+2                      0.001438   245.508502      40.755592     5195.628683
+3                      0.001438   245.508502      40.755592     5195.628683
+4                      0.002980    82.579937      83.037230     1408.076983
+...                         ...          ...            ...             ...
+71459                  0.001598   168.068712      45.460578     2019.092207
+71460                  0.000847   251.550321      80.826160      235.326173
+71461                  0.000847   251.550321      80.826160      235.326173
+71462                  0.001922   159.612157      64.267555      694.819978
+71463                  0.001922   159.612157      64.267555      694.819978
+       ...  mtpu  nd  pa  pb  smmx  smmxmt  ssmx  ssmxcl  suad  sumx
+0      ...     1   0   0   0     0       0     0       0     0     0
+1      ...     0   0   0   0     0       0     0       0     1     0
+2      ...     0   0   0   0     0       0     0       0     1     0
+3      ...     0   0   0   0     0       0     0       0     0     0
+4      ...     1   0   0   0     0       0     0       0     0     0
+...    ...   ...  ..  ..  ..   ...     ...   ...     ...   ...   ...
+71459  ...     1   0   0   0     0       0     0       0     0     0
+71460  ...     0   0   0   0     0       0     1       0     0     0
+71461  ...     0   0   0   0     0       0     1       0     0     0
+71462  ...     0   0   0   0     0       0     1       0     0     0
+71463  ...     0   0   0   0     0       0     1       0     0     0
+[70994 rows x 25 columns]
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+No such comm: 009cc2458b1e4a0a9ea521df658770fe
+No such comm: 986770efd5bc48c7b4c9ffe4f5ce1327
+No such comm: 0f4739965c5b47b4814c566022cf3fcc
+No such comm: f585b4bcd6584a1cabb06cc8ac8a42b1
+No such comm: 6cf2d30a376a4d76abfa2a77f03eb672
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+2.10.1
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
