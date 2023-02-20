@@ -3,8 +3,8 @@
 #SBATCH --ntasks=1 
 #SBATCH --cpus-per-task=1
 #SBATCH --gres=gpu:1 
-#SBATCH --mem=16GB 
-#SBATCH --time=05:00:00 
+#SBATCH --mem=32GB 
+#SBATCH --time=10:00:00 
 #SBATCH --partition=batch 
 
 source activate dlashok

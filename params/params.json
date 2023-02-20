@@ -39,9 +39,10 @@
       "epsg":32645,
       "workingdir":"/home/dahala/extremevaluelandslides/",
       "design_rainfall":"Data/DesignRainfall/ExtractedDesignRainfall.csv",
+      "climateprojections_rainfall":"Data/ClimateProjections/NepalClimateProjection/clim_rps.csv",
       "startyear":1988,
-      "testsize":0.1,
-      "removezeros":false
+      "testsize":0.05,
+      "removezeros":true
     },
     "modelparam":{
       "depth":8,
@@ -62,9 +63,9 @@
       "weight_landslide":9
     },
     "trainparam":{
-      "nepoch":20,
+      "nepoch":100,
       "ckpt":"checkpoints/",
       "batchsize":1024,
-      "valsplit":0.3
+      "valsplit":0.1
     }
     }
