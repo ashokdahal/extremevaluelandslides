@@ -42,12 +42,12 @@
       "climateprojections_rainfall":"Data/ClimateProjections/NepalClimateProjection/clim_rps.csv",
       "startyear":1988,
       "testsize":0.05,
-      "removezeros":true
+      "removezeros":false
     },
     "modelparam":{
       "depth":8,
       "infeatures":29,
-      "outfeatures":2,
+      "outfeatures":4,
       "units":64,
       "kernel_initializer":"he_normal",
       "bias_initializer":"he_normal",
@@ -60,7 +60,10 @@
       "decay_steps":50000,
       "decay_rate":0.95,
       "weight_nolandslide":1,
-      "weight_landslide":9
+      "weight_landslide":9,
+      "su_weight":1,
+      "ad_weight":1,
+      "fr_weight":1
     },
     "trainparam":{
       "nepoch":100,

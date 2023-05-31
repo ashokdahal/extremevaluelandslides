@@ -32,13 +32,15 @@ class readGPDData():
             return None
         sjoined=gpd.overlay(inventory_subset, df_slopeunit_sub, how='intersection')
         sjoined['area_new']=sjoined.area
-        sjoined=sjoined.groupby(['cat'])['area_new'].agg(['sum'])
+        sjoined=sjoined.groupby(['cat'])['area_new'].agg(['sum','count'])
         sjoined=sjoined.rename(columns={'sum':'area_inventory'})
         df_slopeunit_sub['area_slopeunit']=df_slopeunit_sub.area
         df_slopeunit_sub=df_slopeunit_sub.join(sjoined, on='cat')
         df_slopeunit_sub=df_slopeunit_sub.fillna(0)
+        df_slopeunit_sub['landslide']=df_slopeunit_sub.area_inventory>0.0
+        df_slopeunit_sub['landslide']=df_slopeunit_sub['landslide'].astype(int)
         df_slopeunit_sub['area_density']=100*(df_slopeunit_sub.area_inventory/df_slopeunit_sub.area_slopeunit)
-        df_slopeunit_sub=df_slopeunit_sub[['cat','area_density']]
+        df_slopeunit_sub=df_slopeunit_sub[['cat','area_density','landslide','count']]
         return df_slopeunit_sub    
     
     def preparedata(self):
@@ -68,7 +70,7 @@ class readGPDData():
                 clean_covar=pd.concat([clean_covar,alldata])
         clean_covar=clean_covar.dropna()
         Xtrain=clean_covar[self.dataparam['variables']].to_numpy()
-        Ytrain=clean_covar['area_density'].to_numpy()
+        Ytrain=clean_covar[['landslide','area_density','count']].to_numpy()
         if self.dataparam['removezeros']:
             idx=np.where(Ytrain>0)[0]
             Xtrain=Xtrain[idx]
