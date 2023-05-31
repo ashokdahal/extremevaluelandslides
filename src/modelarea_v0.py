@@ -28,12 +28,6 @@ class lhmodel():
         self.landslideweight=modelparam['weight_landslide']
         self.nolandslideweight=modelparam['weight_nolandslide']
         self.opt=tf.keras.optimizers.Adam
-        self.bce = tf.keras.losses.BinaryCrossentropy(from_logits=True)
-        self.poisson=tf.keras.losses.Poisson(reduction=losses_utils.ReductionV2.AUTO, name='poisson')
-        self.su_weight=modelparam['su_weight']
-        self.ad_weight=modelparam['ad_weight']
-        self.fr_weight=modelparam['fr_weight']
-        self.auc=tf.keras.metrics.AUC(from_logits=True)
 
     def getAreaDensityModel(self):
 
@@ -46,7 +40,7 @@ class lhmodel():
             if self.droupout:
                 x= layers.Dropout(self.dropoutratio)(x) 
             x=layers.LeakyReLU(alpha=0.02)(x)     
-        out_areaDen=layers.Dense(units=self.outfeatures,activation='selu',name='hazardparams')(x)
+        out_areaDen=layers.Dense(units=self.outfeatures,activation='selu',name='areaDen')(x)
         self.model = Model(inputs=features_only, outputs=out_areaDen)
 
     def getOptimizer(self,):
@@ -76,47 +70,6 @@ class lhmodel():
         dist=tfp.distributions.GeneralizedPareto(loc=loc,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
         lik=-dist.log_prob(ytrue)
         return tf.reduce_sum(tf.math.multiply(lik,weight))
-
-    def combinedloss(self,ytrue,ypred):
-        #'landslide','area_density','count'
-        #______Probability Part_________
-        y_tr_su=ytrue[:,0]
-        y_pr_su=ypred[:,0]
-        su_loss=self.bce(y_tr_su,y_pr_su)
-        su_loss=tf.math.scalar_mul(self.su_weight,su_loss)
-
-        #______GPD Part_________
-        y_tr_ad=ytrue[:,1]
-        loc=0.0
-        scale=tf.math.exp(ypred[:,1])
-        conc=tf.nn.relu(ypred[:,2])
-        weight=tf.cast(y_tr_ad>0,dtype=tf.dtypes.float32)
-        weight=(weight*(self.landslideweight-self.nolandslideweight))+self.landslideweight
-        distgpd=tfp.distributions.GeneralizedPareto(loc=loc,scale=scale,concentration=conc,validate_args=False,allow_nan_stats=False,name='GeneralizedExtremeValue')
-        likgpd=-distgpd.log_prob(y_tr_ad)
-        ad_loss=tf.math.multiply(likgpd,y_tr_su)
-        ad_loss=tf.math.scalar_mul(self.ad_weight,ad_loss)
-
-        #______Frequency Part_________
-        y_tr_fr=ytrue[:,2]
-        rate=tf.nn.relu(ypred[:,2])
-        distfr=tfp.distributions.Poisson(rate=rate,validate_args=False,allow_nan_stats=False,name='Poisson')
-        likfr=-distfr.log_prob(y_tr_fr)
-        fr_loss=tf.math.multiply(lik,y_tr_su)
-        fr_loss=tf.math.scalar_mul(self.fr_weight,fr_loss)
-
-        #______Return data______________
-        return tf.reduce_sum(tf.math.add_n([su_loss,ad_loss,fr_loss]))
-
-    def combinedmetric(self,ytrue,ypred):
-        #'landslide','area_density','count'
-        #______Probability Part_________
-        y_tr_su=ytrue[:,0]
-        y_pr_su=ypred[:,0]
-        self.auc.reset_state()
-        commetric=self.auc.update_state(y_tr_su,y_pr_su)
-        return tf.reduce_sum(commetric)
-
     def gpdmetric(self,ytrue,ypred):
         loc=0.0
         scale=tf.math.exp(ypred[:,0])
@@ -128,7 +81,7 @@ class lhmodel():
     def preparemodel(self,weights=None):
         self.getAreaDensityModel()
         self.getOptimizer()
-        self.model.compile(optimizer=self.optimizer, loss=self.combinedloss, metrics=self.combinedmetric)
+        self.model.compile(optimizer=self.optimizer, loss=self.gpdloss, metrics=self.gpdmetric)
     
 '''
 #old version of code only used for reference. 
