@@ -1,1 +1,0 @@
-{"epoch/loss": 0.010000296868383884, "epoch/gpdmetric": 0.9954337477684021, "epoch/val_loss": 0.009563193656504154, "epoch/val_gpdmetric": 0.9955568909645081, "epoch/epoch": 2, "epoch/learning_rate": 0.0010000000474974513, "_timestamp": 1674044148.8527176, "_runtime": 726.677036523819, "_step": 2, "_wandb": {"runtime": 841}}
