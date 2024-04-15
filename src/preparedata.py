@@ -3,7 +3,6 @@ import geopandas as gpd
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from tqdm.notebook import tqdm
-import os
 
 
 class readGPDData:
@@ -101,7 +100,7 @@ class readGPDData:
                 clean_covar = pd.concat([clean_covar, alldata])
         clean_covar = clean_covar.dropna()
         Xtrain = clean_covar[self.dataparam["variables"]].to_numpy()
-        clean_covar["area_density"]=clean_covar["area_density"]
+        clean_covar["area_density"] = clean_covar["area_density"]
         Ytrain = clean_covar[["landslide", "area_density", "count"]].to_numpy()
         if self.dataparam["removezeros"]:
             idx = np.where(Ytrain > 0)[0]

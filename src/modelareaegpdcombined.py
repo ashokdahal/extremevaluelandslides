@@ -1,11 +1,8 @@
-from tensorflow import keras
 from tensorflow.keras.layers import *
 import tensorflow as tf
-from tensorflow.keras import layers, optimizers, losses, metrics, Model
-from scipy.stats import genpareto
+from tensorflow.keras import layers, Model
+
 # import tensorflow_probability as tfp
-import numpy as np
-from scipy.stats import genpareto
 
 # import tensorflow_probability.distributions as tfp
 # tfd = tfp.distributions
@@ -60,7 +57,7 @@ class lhmodel:
         x = layers.Dense(
             units=self.units,
             activation="relu",
-            name=f"AR_DN_0",
+            name="AR_DN_0",
             kernel_initializer=self.kernel_initializer,
             bias_initializer=self.bias_initializer,
         )(features_only)
@@ -84,7 +81,7 @@ class lhmodel:
         out_sus = layers.Dense(
             units=self.outfeatures, activation="sigmoid", name="susout"
         )(x)
-        self.model = Model(inputs=features_only, outputs=[out_sus,out_areaDen])
+        self.model = Model(inputs=features_only, outputs=[out_sus, out_areaDen])
 
     def getOptimizer(
         self,
@@ -96,6 +93,7 @@ class lhmodel:
             staircase=True,
         )
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=lr_schedule)
+
     def dice_loss(self, y_true, y_pred, smooth=1e-6):  # Only Smooth
         """
         https://gist.github.com/wassname/7793e2058c5c9dacb5212c0ac0b18a8a
@@ -111,38 +109,45 @@ class lhmodel:
             + smooth
         )
         return 1 - dice_coef
+
     def egpdloss(self, ytrue, ypred):
         #'landslide','area_density','count'
         # ______Probability Part_________
-        ypred=ypred[ytrue>0.1]
-        ytrue=ytrue[ytrue>0.1]
+        ypred = ypred[ytrue > 0.1]
+        ytrue = ytrue[ytrue > 0.1]
         kappa = 0.8118067
-        sig = tf.nn.relu(ypred)+0.2
+        sig = tf.nn.relu(ypred) + 0.2
         xi = 0.4919825
-        
+
         y = tf.nn.relu(ytrue)
-        
-        sig = sig - sig * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))  # If no exceedance, set sig to 1
-        kappa = kappa - kappa * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))  # If no exceedance, set kappa to 1
-        xi = xi - xi * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))  # If no exceedance, set xi to 1
-        
+
+        sig = (
+            sig - sig * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))
+        )  # If no exceedance, set sig to 1
+        kappa = (
+            kappa - kappa * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))
+        )  # If no exceedance, set kappa to 1
+        xi = (
+            xi - xi * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))
+        )  # If no exceedance, set xi to 1
+
         # Evaluate log-likelihood
         ll1 = -(1 / xi + 1) * tf.math.log(1 + xi * y / sig)
-        
+
         # Uses non-zero response values only
         ll2 = tf.math.log(sig) * tf.math.sign(ll1)
-        
+
         ll3 = -tf.math.log(kappa) * tf.math.sign(ll1)
-        
+
         y = y - y * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))  # If zero, set y to 1
-        
-        ll4 = (kappa - 1) * tf.math.log(1 - (1 + xi * y / sig)**(-1 / xi))
-    
+
+        ll4 = (kappa - 1) * tf.math.log(1 - (1 + xi * y / sig) ** (-1 / xi))
+
         return -tf.reduce_sum(ll1 + ll2 + ll3 + ll4)
-        
+
     def f1_m(self, ytrue, ypred):
-        y_true=ytrue
-        y_pred=ypred
+        y_true = ytrue
+        y_pred = ypred
         precision = self.precision_m(y_true, y_pred)
         recall = self.recall_m(y_true, y_pred)
         return 2 * ((precision * recall) / (precision + recall + K.epsilon()))
@@ -152,7 +157,7 @@ class lhmodel:
         self.getOptimizer()
         self.model.compile(
             optimizer=self.optimizer,
-            loss=['binary_crossentropy',self.egpdloss],
-            loss_weights=[100,1],
-            metrics=[self.f1_m,tf.keras.metrics.RootMeanSquaredError()],
+            loss=["binary_crossentropy", self.egpdloss],
+            loss_weights=[100, 1],
+            metrics=[self.f1_m, tf.keras.metrics.RootMeanSquaredError()],
         )

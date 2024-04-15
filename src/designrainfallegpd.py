@@ -1,11 +1,7 @@
-from tensorflow import keras
 from tensorflow.keras.layers import *
 import tensorflow as tf
-from tensorflow.keras import layers, optimizers, losses, metrics, Model
-from scipy.stats import genpareto
+from tensorflow.keras import layers, Model
 import tensorflow_probability as tfp
-import numpy as np
-from scipy.stats import genpareto
 
 # import tensorflow_probability.distributions as tfp
 tfd = tfp.distributions
@@ -60,7 +56,7 @@ class prepmodel:
         x = layers.Dense(
             units=self.units,
             activation="relu",
-            name=f"AR_DN_0",
+            name="AR_DN_0",
             kernel_initializer=self.kernel_initializer,
             bias_initializer=self.bias_initializer,
         )(features_only)
@@ -93,38 +89,43 @@ class prepmodel:
         )
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=lr_schedule)
 
-
     def combinedloss(self, ytrue, ypred):
         #'landslide','area_density','count'
         # ______Probability Part_________
         kappa = self.kappa
-        sig = tf.nn.relu(ypred)+self.offset
+        sig = tf.nn.relu(ypred) + self.offset
         xi = self.xi
-        
+
         y = tf.nn.relu(ytrue)
-        
-        sig = sig - sig * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))  # If no exceedance, set sig to 1
-        kappa = kappa - kappa * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))  # If no exceedance, set kappa to 1
-        xi = xi - xi * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))  # If no exceedance, set xi to 1
-        
+
+        sig = (
+            sig - sig * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))
+        )  # If no exceedance, set sig to 1
+        kappa = (
+            kappa - kappa * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))
+        )  # If no exceedance, set kappa to 1
+        xi = (
+            xi - xi * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))
+        )  # If no exceedance, set xi to 1
+
         # Evaluate log-likelihood
         ll1 = -(1 / xi + 1) * tf.math.log(1 + xi * y / sig)
-        
+
         # Uses non-zero response values only
         ll2 = tf.math.log(sig) * tf.math.sign(ll1)
-        
+
         ll3 = -tf.math.log(kappa) * tf.math.sign(ll1)
-        
+
         y = y - y * (1 - tf.math.sign(y)) + (1 - tf.math.sign(y))  # If zero, set y to 1
-        
-        ll4 = (kappa - 1) * tf.math.log(1 - (1 + xi * y / sig)**(-1 / xi))
-    
+
+        ll4 = (kappa - 1) * tf.math.log(1 - (1 + xi * y / sig) ** (-1 / xi))
+
         return -tf.reduce_sum(ll1 + ll2 + ll3 + ll4)
 
-    def preparemodel(self,kappa,xi,offset, weights=None):
-        self.kappa=kappa
-        self.xi=xi
-        self.offset=offset
+    def preparemodel(self, kappa, xi, offset, weights=None):
+        self.kappa = kappa
+        self.xi = xi
+        self.offset = offset
         self.getPrecipModel()
         self.getOptimizer()
         self.model.compile(
